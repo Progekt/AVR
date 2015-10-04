@@ -1,0 +1,26 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.42</VERSION>
+ <DEVICE>ATmega128</DEVICE>
+ <WORKING_DIR>D:\Progects\DPCU</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:\Program Files\Atmel\AVR Tools\AvrAssembler2\Appnotes</DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>D:\Progects\DPCU\DPCU.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:\Program Files\Atmel\AVR Tools\AvrAssembler2\Appnotes\m128def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>D:\Progects\DPCU\DPCU.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>D:\Progects\DPCU\DPCU.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>D:\Progects\DPCU\DPCU.map</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <RESET><FILE>D:\Progects\DPCU\DPCU.asm</FILE><LINE>65</LINE></RESET>
+  <Delay><FILE>D:\Progects\DPCU\DPCU.asm</FILE><LINE>178</LINE></Delay>
+  <IMP_E><FILE>D:\Progects\DPCU\DPCU.asm</FILE><LINE>168</LINE></IMP_E>
+ </LABELS>
+</ASSEMBLER_INFO>

@@ -1,0 +1,29 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.42</VERSION>
+ <DEVICE>ATmega8515</DEVICE>
+ <WORKING_DIR>D:\Progects\UART_Transmit</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:\Program Files\Atmel\AVR Tools\AvrAssembler2\Appnotes</DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>D:\Progects\UART_Transmit\UART_Transmit.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:\Program Files\Atmel\AVR Tools\AvrAssembler2\Appnotes\m8515def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>D:\Progects\UART_Transmit\UART_Transmit.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>D:\Progects\UART_Transmit\UART_Transmit.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>D:\Progects\UART_Transmit\UART_Transmit.map</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <RESET><FILE>D:\Progects\UART_Transmit\UART_Transmit.asm</FILE><LINE>22</LINE></RESET>
+  <Button><FILE>D:\Progects\UART_Transmit\UART_Transmit.asm</FILE><LINE>58</LINE></Button>
+  <Delay><FILE>D:\Progects\UART_Transmit\UART_Transmit.asm</FILE><LINE>76</LINE></Delay>
+  <transmit><FILE>D:\Progects\UART_Transmit\UART_Transmit.asm</FILE><LINE>64</LINE></transmit>
+  <m1><FILE>D:\Progects\UART_Transmit\UART_Transmit.asm</FILE><LINE>68</LINE></m1>
+  <wt1><FILE>D:\Progects\UART_Transmit\UART_Transmit.asm</FILE><LINE>81</LINE></wt1>
+ </LABELS>
+</ASSEMBLER_INFO>

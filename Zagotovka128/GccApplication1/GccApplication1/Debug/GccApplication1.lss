@@ -1,0 +1,2003 @@
+
+GccApplication1.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000010  00800100  00000bd2  00000c86  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000bd2  00000000  00000000  000000b4  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          0000000a  00800110  00800110  00000c96  2**0
+                  ALLOC
+  3 .eeprom       00000001  00810000  00810000  00000c96  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  4 .stab         00001818  00000000  00000000  00000c98  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  5 .stabstr      00000682  00000000  00000000  000024b0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_aranges 00000020  00000000  00000000  00002b32  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_pubnames 000000ee  00000000  00000000  00002b52  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_info   00000dea  00000000  00000000  00002c40  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_abbrev 000001e9  00000000  00000000  00003a2a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_line   00000bf1  00000000  00000000  00003c13  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_frame  000000e0  00000000  00000000  00004804  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_str    00000186  00000000  00000000  000048e4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_loc    00000329  00000000  00000000  00004a6a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 14 .debug_pubtypes 00000038  00000000  00000000  00004d93  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+   4:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+   8:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+   c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  10:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  14:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  18:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  1c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  20:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  24:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  28:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  2c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  30:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  34:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  38:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  3c:	0c 94 3f 01 	jmp	0x27e	; 0x27e <__vector_15>
+  40:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  44:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  48:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  4c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  50:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  54:	0c 94 56 01 	jmp	0x2ac	; 0x2ac <__vector_21>
+  58:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  5c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  60:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  64:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  68:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  6c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  70:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  74:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  78:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  7c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  80:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  84:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  88:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+  98:	11 e0       	ldi	r17, 0x01	; 1
+  9a:	a0 e0       	ldi	r26, 0x00	; 0
+  9c:	b1 e0       	ldi	r27, 0x01	; 1
+  9e:	e2 ed       	ldi	r30, 0xD2	; 210
+  a0:	fb e0       	ldi	r31, 0x0B	; 11
+  a2:	00 e0       	ldi	r16, 0x00	; 0
+  a4:	0b bf       	out	0x3b, r16	; 59
+  a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
+  a8:	07 90       	elpm	r0, Z+
+  aa:	0d 92       	st	X+, r0
+  ac:	a0 31       	cpi	r26, 0x10	; 16
+  ae:	b1 07       	cpc	r27, r17
+  b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+
+000000b2 <__do_clear_bss>:
+  b2:	11 e0       	ldi	r17, 0x01	; 1
+  b4:	a0 e1       	ldi	r26, 0x10	; 16
+  b6:	b1 e0       	ldi	r27, 0x01	; 1
+  b8:	01 c0       	rjmp	.+2      	; 0xbc <.do_clear_bss_start>
+
+000000ba <.do_clear_bss_loop>:
+  ba:	1d 92       	st	X+, r1
+
+000000bc <.do_clear_bss_start>:
+  bc:	aa 31       	cpi	r26, 0x1A	; 26
+  be:	b1 07       	cpc	r27, r17
+  c0:	e1 f7       	brne	.-8      	; 0xba <.do_clear_bss_loop>
+  c2:	0e 94 a4 02 	call	0x548	; 0x548 <main>
+  c6:	0c 94 e7 05 	jmp	0xbce	; 0xbce <_exit>
+
+000000ca <__bad_interrupt>:
+  ca:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000ce <InitPorts>:
+uint8_t w EEMEM; // объявил переменную в еепром
+
+
+void InitPorts() //Инициализация портов
+{
+	PORTA=0; DDRA=0x40; //Кнопки
+  ce:	1b ba       	out	0x1b, r1	; 27
+  d0:	80 e4       	ldi	r24, 0x40	; 64
+  d2:	8a bb       	out	0x1a, r24	; 26
+	PORTC=0; DDRC=0xF7; //Дисплей
+  d4:	15 ba       	out	0x15, r1	; 21
+  d6:	87 ef       	ldi	r24, 0xF7	; 247
+  d8:	84 bb       	out	0x14, r24	; 20
+	PORTB=0; DDRB=0xff;//диоды
+  da:	18 ba       	out	0x18, r1	; 24
+  dc:	8f ef       	ldi	r24, 0xFF	; 255
+  de:	87 bb       	out	0x17, r24	; 23
+}
+  e0:	08 95       	ret
+
+000000e2 <InitT0>:
+
+void InitT0() //Подключение часового кварца к Т0
+{
+	cli();//глобальное отключение прирываний
+  e2:	f8 94       	cli
+	TIMSK=0;//сброс прерывания таймера по переполнению и совпадению
+  e4:	17 be       	out	0x37, r1	; 55
+	ASSR=(1<<AS0);//включен Асинхронный режим
+  e6:	88 e0       	ldi	r24, 0x08	; 8
+  e8:	80 bf       	out	0x30, r24	; 48
+	TCCR0=(1<<CS00)|(1<<CS02)|(1<<WGM01);//Сброс при совпадении (режим работы таймера)// ДЕЛИТЕЛЬ НА128
+  ea:	8d e0       	ldi	r24, 0x0D	; 13
+  ec:	83 bf       	out	0x33, r24	; 51
+	OCR0=0XFF; //Регистр совпадения T0
+  ee:	8f ef       	ldi	r24, 0xFF	; 255
+  f0:	81 bf       	out	0x31, r24	; 49
+	TIMSK=(1<<OCIE0);//Разрешение прерываний при совпадении OCR0 и TCNT0
+  f2:	82 e0       	ldi	r24, 0x02	; 2
+  f4:	87 bf       	out	0x37, r24	; 55
+	TIFR=0;//хз зачем
+  f6:	16 be       	out	0x36, r1	; 54
+	}
+  f8:	08 95       	ret
+
+000000fa <E_puls>:
+
+void E_puls()
+{
+	PORTC=PORTC|0b00000100; //Установка Е
+  fa:	aa 9a       	sbi	0x15, 2	; 21
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  fc:	8f e8       	ldi	r24, 0x8F	; 143
+  fe:	91 e0       	ldi	r25, 0x01	; 1
+ 100:	01 97       	sbiw	r24, 0x01	; 1
+ 102:	f1 f7       	brne	.-4      	; 0x100 <E_puls+0x6>
+ 104:	00 c0       	rjmp	.+0      	; 0x106 <E_puls+0xc>
+ 106:	00 00       	nop
+	_delay_us(100);
+	PORTC=PORTC&0b11111011;//Отключение Е
+ 108:	aa 98       	cbi	0x15, 2	; 21
+	
+}
+ 10a:	08 95       	ret
+
+0000010c <InitLCD>:
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 10c:	8f ef       	ldi	r24, 0xFF	; 255
+ 10e:	94 e3       	ldi	r25, 0x34	; 52
+ 110:	ac e0       	ldi	r26, 0x0C	; 12
+ 112:	81 50       	subi	r24, 0x01	; 1
+ 114:	90 40       	sbci	r25, 0x00	; 0
+ 116:	a0 40       	sbci	r26, 0x00	; 0
+ 118:	e1 f7       	brne	.-8      	; 0x112 <InitLCD+0x6>
+ 11a:	00 c0       	rjmp	.+0      	; 0x11c <InitLCD+0x10>
+ 11c:	00 00       	nop
+ 11e:	8f ef       	ldi	r24, 0xFF	; 255
+ 120:	94 e3       	ldi	r25, 0x34	; 52
+ 122:	ac e0       	ldi	r26, 0x0C	; 12
+ 124:	81 50       	subi	r24, 0x01	; 1
+ 126:	90 40       	sbci	r25, 0x00	; 0
+ 128:	a0 40       	sbci	r26, 0x00	; 0
+ 12a:	e1 f7       	brne	.-8      	; 0x124 <InitLCD+0x18>
+ 12c:	00 c0       	rjmp	.+0      	; 0x12e <InitLCD+0x22>
+ 12e:	00 00       	nop
+ 130:	8f ef       	ldi	r24, 0xFF	; 255
+ 132:	94 e3       	ldi	r25, 0x34	; 52
+ 134:	ac e0       	ldi	r26, 0x0C	; 12
+ 136:	81 50       	subi	r24, 0x01	; 1
+ 138:	90 40       	sbci	r25, 0x00	; 0
+ 13a:	a0 40       	sbci	r26, 0x00	; 0
+ 13c:	e1 f7       	brne	.-8      	; 0x136 <InitLCD+0x2a>
+ 13e:	00 c0       	rjmp	.+0      	; 0x140 <InitLCD+0x34>
+ 140:	00 00       	nop
+ 142:	8f ef       	ldi	r24, 0xFF	; 255
+ 144:	94 e3       	ldi	r25, 0x34	; 52
+ 146:	ac e0       	ldi	r26, 0x0C	; 12
+ 148:	81 50       	subi	r24, 0x01	; 1
+ 14a:	90 40       	sbci	r25, 0x00	; 0
+ 14c:	a0 40       	sbci	r26, 0x00	; 0
+ 14e:	e1 f7       	brne	.-8      	; 0x148 <InitLCD+0x3c>
+ 150:	00 c0       	rjmp	.+0      	; 0x152 <InitLCD+0x46>
+ 152:	00 00       	nop
+	_delay_ms(250);//1 сек
+	_delay_ms(250);
+	_delay_ms(250);
+	_delay_ms(250);
+	
+	PORTC=0b00110000;
+ 154:	80 e3       	ldi	r24, 0x30	; 48
+ 156:	85 bb       	out	0x15, r24	; 21
+	PORTC|=(1<<2);//E
+ 158:	aa 9a       	sbi	0x15, 2	; 21
+	PORTC&=~(1<<2);
+ 15a:	aa 98       	cbi	0x15, 2	; 21
+ 15c:	af e1       	ldi	r26, 0x1F	; 31
+ 15e:	be e4       	ldi	r27, 0x4E	; 78
+ 160:	11 97       	sbiw	r26, 0x01	; 1
+ 162:	f1 f7       	brne	.-4      	; 0x160 <InitLCD+0x54>
+ 164:	00 c0       	rjmp	.+0      	; 0x166 <InitLCD+0x5a>
+ 166:	00 00       	nop
+	_delay_ms(5);
+	
+	PORTC=0b00110000;
+ 168:	85 bb       	out	0x15, r24	; 21
+	PORTC|=(1<<2);//E
+ 16a:	aa 9a       	sbi	0x15, 2	; 21
+	PORTC&=~(1<<2);
+ 16c:	aa 98       	cbi	0x15, 2	; 21
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 16e:	ef e8       	ldi	r30, 0x8F	; 143
+ 170:	f1 e0       	ldi	r31, 0x01	; 1
+ 172:	31 97       	sbiw	r30, 0x01	; 1
+ 174:	f1 f7       	brne	.-4      	; 0x172 <InitLCD+0x66>
+ 176:	00 c0       	rjmp	.+0      	; 0x178 <InitLCD+0x6c>
+ 178:	00 00       	nop
+	_delay_us(100);
+	
+	PORTC=0b00110000;
+ 17a:	85 bb       	out	0x15, r24	; 21
+	PORTC|=(1<<2);//E
+ 17c:	aa 9a       	sbi	0x15, 2	; 21
+	PORTC&=~(1<<2);
+ 17e:	aa 98       	cbi	0x15, 2	; 21
+ 180:	8f e1       	ldi	r24, 0x1F	; 31
+ 182:	93 e0       	ldi	r25, 0x03	; 3
+ 184:	01 97       	sbiw	r24, 0x01	; 1
+ 186:	f1 f7       	brne	.-4      	; 0x184 <InitLCD+0x78>
+ 188:	00 c0       	rjmp	.+0      	; 0x18a <InitLCD+0x7e>
+ 18a:	00 00       	nop
+	_delay_us(200);
+	
+	PORTC=0b00100000;
+ 18c:	80 e2       	ldi	r24, 0x20	; 32
+ 18e:	85 bb       	out	0x15, r24	; 21
+	PORTC|=(1<<2);//E
+ 190:	aa 9a       	sbi	0x15, 2	; 21
+	PORTC&=~(1<<2);
+ 192:	aa 98       	cbi	0x15, 2	; 21
+ 194:	af e8       	ldi	r26, 0x8F	; 143
+ 196:	b1 e0       	ldi	r27, 0x01	; 1
+ 198:	11 97       	sbiw	r26, 0x01	; 1
+ 19a:	f1 f7       	brne	.-4      	; 0x198 <InitLCD+0x8c>
+ 19c:	00 c0       	rjmp	.+0      	; 0x19e <InitLCD+0x92>
+ 19e:	00 00       	nop
+	_delay_us(100);
+	
+	PORTC=0b00100000;
+ 1a0:	85 bb       	out	0x15, r24	; 21
+	PORTC|=(1<<2);//E
+ 1a2:	aa 9a       	sbi	0x15, 2	; 21
+	PORTC&=~(1<<2);
+ 1a4:	aa 98       	cbi	0x15, 2	; 21
+	PORTC=0b11000000;
+ 1a6:	80 ec       	ldi	r24, 0xC0	; 192
+ 1a8:	85 bb       	out	0x15, r24	; 21
+	PORTC|=(1<<2);//E
+ 1aa:	aa 9a       	sbi	0x15, 2	; 21
+	PORTC&=~(1<<2);
+ 1ac:	aa 98       	cbi	0x15, 2	; 21
+ 1ae:	ef e8       	ldi	r30, 0x8F	; 143
+ 1b0:	f1 e0       	ldi	r31, 0x01	; 1
+ 1b2:	31 97       	sbiw	r30, 0x01	; 1
+ 1b4:	f1 f7       	brne	.-4      	; 0x1b2 <InitLCD+0xa6>
+ 1b6:	00 c0       	rjmp	.+0      	; 0x1b8 <InitLCD+0xac>
+ 1b8:	00 00       	nop
+	_delay_us(100);
+	
+	PORTC=0b00000000;
+ 1ba:	15 ba       	out	0x15, r1	; 21
+	PORTC|=(1<<2);//E
+ 1bc:	aa 9a       	sbi	0x15, 2	; 21
+	PORTC&=~(1<<2);
+ 1be:	aa 98       	cbi	0x15, 2	; 21
+	PORTC=0b11000000; //курсор
+ 1c0:	85 bb       	out	0x15, r24	; 21
+	PORTC|=(1<<2);//E
+ 1c2:	aa 9a       	sbi	0x15, 2	; 21
+	PORTC&=~(1<<2);
+ 1c4:	aa 98       	cbi	0x15, 2	; 21
+ 1c6:	8f e8       	ldi	r24, 0x8F	; 143
+ 1c8:	91 e0       	ldi	r25, 0x01	; 1
+ 1ca:	01 97       	sbiw	r24, 0x01	; 1
+ 1cc:	f1 f7       	brne	.-4      	; 0x1ca <InitLCD+0xbe>
+ 1ce:	00 c0       	rjmp	.+0      	; 0x1d0 <InitLCD+0xc4>
+ 1d0:	00 00       	nop
+	_delay_us(100);
+	
+	PORTC=0b00000000;
+ 1d2:	15 ba       	out	0x15, r1	; 21
+	PORTC|=(1<<2);//E
+ 1d4:	aa 9a       	sbi	0x15, 2	; 21
+	PORTC&=~(1<<2);
+ 1d6:	aa 98       	cbi	0x15, 2	; 21
+	PORTC=0b00010000;
+ 1d8:	80 e1       	ldi	r24, 0x10	; 16
+ 1da:	85 bb       	out	0x15, r24	; 21
+	PORTC|=(1<<2);//E
+ 1dc:	aa 9a       	sbi	0x15, 2	; 21
+	PORTC&=~(1<<2);
+ 1de:	aa 98       	cbi	0x15, 2	; 21
+ 1e0:	af e8       	ldi	r26, 0x8F	; 143
+ 1e2:	b1 e0       	ldi	r27, 0x01	; 1
+ 1e4:	11 97       	sbiw	r26, 0x01	; 1
+ 1e6:	f1 f7       	brne	.-4      	; 0x1e4 <InitLCD+0xd8>
+ 1e8:	00 c0       	rjmp	.+0      	; 0x1ea <InitLCD+0xde>
+ 1ea:	00 00       	nop
+	_delay_us(100);
+	
+	PORTC=0b00000000;
+ 1ec:	15 ba       	out	0x15, r1	; 21
+	PORTC|=(1<<2);//E
+ 1ee:	aa 9a       	sbi	0x15, 2	; 21
+	PORTC&=~(1<<2);
+ 1f0:	aa 98       	cbi	0x15, 2	; 21
+	PORTC=0b01000000;
+ 1f2:	80 e4       	ldi	r24, 0x40	; 64
+ 1f4:	85 bb       	out	0x15, r24	; 21
+	PORTC|=(1<<2);//E
+ 1f6:	aa 9a       	sbi	0x15, 2	; 21
+	PORTC&=~(1<<2);
+ 1f8:	aa 98       	cbi	0x15, 2	; 21
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 1fa:	ef e3       	ldi	r30, 0x3F	; 63
+ 1fc:	ff e1       	ldi	r31, 0x1F	; 31
+ 1fe:	31 97       	sbiw	r30, 0x01	; 1
+ 200:	f1 f7       	brne	.-4      	; 0x1fe <InitLCD+0xf2>
+ 202:	00 c0       	rjmp	.+0      	; 0x204 <InitLCD+0xf8>
+ 204:	00 00       	nop
+	_delay_ms(2);
+}
+ 206:	08 95       	ret
+
+00000208 <LCD_data>:
+
+void LCD_data(unsigned char p)//р байт данных
+{
+	PORTC|=(1<<0)|(1<<2);//RS=1 запись данных E=1 установка записи 
+ 208:	95 b3       	in	r25, 0x15	; 21
+ 20a:	95 60       	ori	r25, 0x05	; 5
+ 20c:	95 bb       	out	0x15, r25	; 21
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 20e:	ef e8       	ldi	r30, 0x8F	; 143
+ 210:	f1 e0       	ldi	r31, 0x01	; 1
+ 212:	31 97       	sbiw	r30, 0x01	; 1
+ 214:	f1 f7       	brne	.-4      	; 0x212 <LCD_data+0xa>
+ 216:	00 c0       	rjmp	.+0      	; 0x218 <LCD_data+0x10>
+ 218:	00 00       	nop
+	_delay_us(100);
+	PORTC&=0x0F;//чистим старшие биты на порту
+ 21a:	95 b3       	in	r25, 0x15	; 21
+ 21c:	9f 70       	andi	r25, 0x0F	; 15
+ 21e:	95 bb       	out	0x15, r25	; 21
+	PORTC|=(p&0xF0);//отделяем и записываем старший нибл р
+ 220:	95 b3       	in	r25, 0x15	; 21
+ 222:	28 2f       	mov	r18, r24
+ 224:	20 7f       	andi	r18, 0xF0	; 240
+ 226:	92 2b       	or	r25, r18
+ 228:	95 bb       	out	0x15, r25	; 21
+ 22a:	ef e8       	ldi	r30, 0x8F	; 143
+ 22c:	f1 e0       	ldi	r31, 0x01	; 1
+ 22e:	31 97       	sbiw	r30, 0x01	; 1
+ 230:	f1 f7       	brne	.-4      	; 0x22e <LCD_data+0x26>
+ 232:	00 c0       	rjmp	.+0      	; 0x234 <LCD_data+0x2c>
+ 234:	00 00       	nop
+	_delay_us(100);
+	PORTC&=~(1<<2);//Е=0 окончание записи
+ 236:	aa 98       	cbi	0x15, 2	; 21
+ 238:	ef e8       	ldi	r30, 0x8F	; 143
+ 23a:	f1 e0       	ldi	r31, 0x01	; 1
+ 23c:	31 97       	sbiw	r30, 0x01	; 1
+ 23e:	f1 f7       	brne	.-4      	; 0x23c <LCD_data+0x34>
+ 240:	00 c0       	rjmp	.+0      	; 0x242 <LCD_data+0x3a>
+ 242:	00 00       	nop
+	_delay_us(100);
+	PORTC|=(1<<2);//E=1 установка записи
+ 244:	aa 9a       	sbi	0x15, 2	; 21
+ 246:	ef e8       	ldi	r30, 0x8F	; 143
+ 248:	f1 e0       	ldi	r31, 0x01	; 1
+ 24a:	31 97       	sbiw	r30, 0x01	; 1
+ 24c:	f1 f7       	brne	.-4      	; 0x24a <LCD_data+0x42>
+ 24e:	00 c0       	rjmp	.+0      	; 0x250 <LCD_data+0x48>
+ 250:	00 00       	nop
+	_delay_us(100);
+	PORTC&=0x0F;//чистим старшие биты на порту
+ 252:	95 b3       	in	r25, 0x15	; 21
+ 254:	9f 70       	andi	r25, 0x0F	; 15
+ 256:	95 bb       	out	0x15, r25	; 21
+	PORTC|=(p<<4);//Сдвигаем младшии биты на левои записываем в порт
+ 258:	95 b3       	in	r25, 0x15	; 21
+ 25a:	82 95       	swap	r24
+ 25c:	80 7f       	andi	r24, 0xF0	; 240
+ 25e:	89 2b       	or	r24, r25
+ 260:	85 bb       	out	0x15, r24	; 21
+ 262:	8f e8       	ldi	r24, 0x8F	; 143
+ 264:	91 e0       	ldi	r25, 0x01	; 1
+ 266:	01 97       	sbiw	r24, 0x01	; 1
+ 268:	f1 f7       	brne	.-4      	; 0x266 <LCD_data+0x5e>
+ 26a:	00 c0       	rjmp	.+0      	; 0x26c <LCD_data+0x64>
+ 26c:	00 00       	nop
+	_delay_us(100);
+	PORTC&=~(1<<2);//Е=0 окончание записи
+ 26e:	aa 98       	cbi	0x15, 2	; 21
+ 270:	ef e8       	ldi	r30, 0x8F	; 143
+ 272:	f1 e0       	ldi	r31, 0x01	; 1
+ 274:	31 97       	sbiw	r30, 0x01	; 1
+ 276:	f1 f7       	brne	.-4      	; 0x274 <LCD_data+0x6c>
+ 278:	00 c0       	rjmp	.+0      	; 0x27a <LCD_data+0x72>
+ 27a:	00 00       	nop
+	_delay_us(100);
+}
+ 27c:	08 95       	ret
+
+0000027e <__vector_15>:
+
+ISR(TIMER0_COMP_vect)//прерываниеТаймера Т0
+{
+ 27e:	1f 92       	push	r1
+ 280:	0f 92       	push	r0
+ 282:	0f b6       	in	r0, 0x3f	; 63
+ 284:	0f 92       	push	r0
+ 286:	11 24       	eor	r1, r1
+ 288:	8f 93       	push	r24
+ 28a:	9f 93       	push	r25
+	X=X+1;//щетчик
+ 28c:	80 91 14 01 	lds	r24, 0x0114
+ 290:	8f 5f       	subi	r24, 0xFF	; 255
+ 292:	80 93 14 01 	sts	0x0114, r24
+	PORTB^=(1<<0);//инвертирование порта
+ 296:	98 b3       	in	r25, 0x18	; 24
+ 298:	81 e0       	ldi	r24, 0x01	; 1
+ 29a:	89 27       	eor	r24, r25
+ 29c:	88 bb       	out	0x18, r24	; 24
+}
+ 29e:	9f 91       	pop	r25
+ 2a0:	8f 91       	pop	r24
+ 2a2:	0f 90       	pop	r0
+ 2a4:	0f be       	out	0x3f, r0	; 63
+ 2a6:	0f 90       	pop	r0
+ 2a8:	1f 90       	pop	r1
+ 2aa:	18 95       	reti
+
+000002ac <__vector_21>:
+
+ISR(ADC_vect)//Прерывание по АЦП
+{
+ 2ac:	1f 92       	push	r1
+ 2ae:	0f 92       	push	r0
+ 2b0:	0f b6       	in	r0, 0x3f	; 63
+ 2b2:	0f 92       	push	r0
+ 2b4:	11 24       	eor	r1, r1
+ 2b6:	8f 93       	push	r24
+ 2b8:	9f 93       	push	r25
+	//double A=0;
+	ACH=ADCW;
+ 2ba:	84 b1       	in	r24, 0x04	; 4
+ 2bc:	95 b1       	in	r25, 0x05	; 5
+ 2be:	90 93 11 01 	sts	0x0111, r25
+ 2c2:	80 93 10 01 	sts	0x0110, r24
+	ADCSRA &= (~(1<<ADIE));// Запрещает прерывания
+ 2c6:	33 98       	cbi	0x06, 3	; 6
+
+}
+ 2c8:	9f 91       	pop	r25
+ 2ca:	8f 91       	pop	r24
+ 2cc:	0f 90       	pop	r0
+ 2ce:	0f be       	out	0x3f, r0	; 63
+ 2d0:	0f 90       	pop	r0
+ 2d2:	1f 90       	pop	r1
+ 2d4:	18 95       	reti
+
+000002d6 <Tamperatyra>:
+
+void Tamperatyra()
+{
+	PORTC=0b10000000; //Установка курсора на 0C Первая часть
+ 2d6:	80 e8       	ldi	r24, 0x80	; 128
+ 2d8:	85 bb       	out	0x15, r24	; 21
+	PORTC|=(1<<2);//E
+ 2da:	aa 9a       	sbi	0x15, 2	; 21
+	PORTC&=~(1<<2);
+ 2dc:	aa 98       	cbi	0x15, 2	; 21
+	PORTC=0b11000000; //Установка курсора на 0C Вторая часть		
+ 2de:	80 ec       	ldi	r24, 0xC0	; 192
+ 2e0:	85 bb       	out	0x15, r24	; 21
+	PORTC|=(1<<2);//E
+ 2e2:	aa 9a       	sbi	0x15, 2	; 21
+	PORTC&=~(1<<2);
+ 2e4:	aa 98       	cbi	0x15, 2	; 21
+	
+	if (ACH>=474)
+ 2e6:	80 91 10 01 	lds	r24, 0x0110
+ 2ea:	90 91 11 01 	lds	r25, 0x0111
+ 2ee:	21 e0       	ldi	r18, 0x01	; 1
+ 2f0:	8a 3d       	cpi	r24, 0xDA	; 218
+ 2f2:	92 07       	cpc	r25, r18
+ 2f4:	d0 f0       	brcs	.+52     	; 0x32a <Tamperatyra+0x54>
+	{
+		LCD_data(0x20);
+ 2f6:	80 e2       	ldi	r24, 0x20	; 32
+ 2f8:	0e 94 04 01 	call	0x208	; 0x208 <LCD_data>
+		
+		ACL=(ACH-474)/1.6; //Расчет температуры из ацп	
+ 2fc:	60 91 10 01 	lds	r22, 0x0110
+ 300:	70 91 11 01 	lds	r23, 0x0111
+ 304:	6a 5d       	subi	r22, 0xDA	; 218
+ 306:	71 40       	sbci	r23, 0x01	; 1
+ 308:	80 e0       	ldi	r24, 0x00	; 0
+ 30a:	90 e0       	ldi	r25, 0x00	; 0
+ 30c:	0e 94 24 05 	call	0xa48	; 0xa48 <__floatunsisf>
+ 310:	2d ec       	ldi	r18, 0xCD	; 205
+ 312:	3c ec       	ldi	r19, 0xCC	; 204
+ 314:	4c ec       	ldi	r20, 0xCC	; 204
+ 316:	5f e3       	ldi	r21, 0x3F	; 63
+ 318:	0e 94 90 04 	call	0x920	; 0x920 <__divsf3>
+ 31c:	0e 94 f8 04 	call	0x9f0	; 0x9f0 <__fixunssfsi>
+ 320:	70 93 13 01 	sts	0x0113, r23
+ 324:	60 93 12 01 	sts	0x0112, r22
+ 328:	08 95       	ret
+	} 
+	else
+	{
+	
+	LCD_data(0x2D);//-
+ 32a:	8d e2       	ldi	r24, 0x2D	; 45
+ 32c:	0e 94 04 01 	call	0x208	; 0x208 <LCD_data>
+		
+		ACL=(474-ACH)/1.6; //Расчет температуры из ацп
+ 330:	80 91 10 01 	lds	r24, 0x0110
+ 334:	90 91 11 01 	lds	r25, 0x0111
+ 338:	6a ed       	ldi	r22, 0xDA	; 218
+ 33a:	71 e0       	ldi	r23, 0x01	; 1
+ 33c:	68 1b       	sub	r22, r24
+ 33e:	79 0b       	sbc	r23, r25
+ 340:	80 e0       	ldi	r24, 0x00	; 0
+ 342:	90 e0       	ldi	r25, 0x00	; 0
+ 344:	0e 94 24 05 	call	0xa48	; 0xa48 <__floatunsisf>
+ 348:	2d ec       	ldi	r18, 0xCD	; 205
+ 34a:	3c ec       	ldi	r19, 0xCC	; 204
+ 34c:	4c ec       	ldi	r20, 0xCC	; 204
+ 34e:	5f e3       	ldi	r21, 0x3F	; 63
+ 350:	0e 94 90 04 	call	0x920	; 0x920 <__divsf3>
+ 354:	0e 94 f8 04 	call	0x9f0	; 0x9f0 <__fixunssfsi>
+ 358:	70 93 13 01 	sts	0x0113, r23
+ 35c:	60 93 12 01 	sts	0x0112, r22
+ 360:	08 95       	ret
+
+00000362 <ADCtest>:
+	PORTC|=(1<<2);//E
+	PORTC&=~(1<<2);
+*/
+//РАсчет АЦП для LCD
+		
+	i=(ACL/10); //находим десятки ADCH
+ 362:	80 91 12 01 	lds	r24, 0x0112
+ 366:	90 91 13 01 	lds	r25, 0x0113
+ 36a:	6a e0       	ldi	r22, 0x0A	; 10
+ 36c:	70 e0       	ldi	r23, 0x00	; 0
+ 36e:	0e 94 be 05 	call	0xb7c	; 0xb7c <__udivmodhi4>
+ 372:	60 93 18 01 	sts	0x0118, r22
+ 376:	70 93 19 01 	sts	0x0119, r23
+		
+	LCD_data(i+0x30);//вывод десятков
+ 37a:	86 2f       	mov	r24, r22
+ 37c:	80 5d       	subi	r24, 0xD0	; 208
+ 37e:	0e 94 04 01 	call	0x208	; 0x208 <LCD_data>
+	
+	ACL=ACL-(i*10);//Удаление десятков
+ 382:	80 91 18 01 	lds	r24, 0x0118
+ 386:	90 91 19 01 	lds	r25, 0x0119
+ 38a:	9c 01       	movw	r18, r24
+ 38c:	22 0f       	add	r18, r18
+ 38e:	33 1f       	adc	r19, r19
+ 390:	88 0f       	add	r24, r24
+ 392:	99 1f       	adc	r25, r25
+ 394:	88 0f       	add	r24, r24
+ 396:	99 1f       	adc	r25, r25
+ 398:	88 0f       	add	r24, r24
+ 39a:	99 1f       	adc	r25, r25
+ 39c:	28 0f       	add	r18, r24
+ 39e:	39 1f       	adc	r19, r25
+ 3a0:	80 91 12 01 	lds	r24, 0x0112
+ 3a4:	90 91 13 01 	lds	r25, 0x0113
+ 3a8:	82 1b       	sub	r24, r18
+ 3aa:	93 0b       	sbc	r25, r19
+ 3ac:	90 93 13 01 	sts	0x0113, r25
+ 3b0:	80 93 12 01 	sts	0x0112, r24
+		
+	LCD_data(ACL+0x30);//Выводим еденицы
+ 3b4:	80 5d       	subi	r24, 0xD0	; 208
+ 3b6:	0e 94 04 01 	call	0x208	; 0x208 <LCD_data>
+	}
+ 3ba:	08 95       	ret
+
+000003bc <INITADC>:
+
+void INITADC() //Инициализация АЦП
+{
+	ADMUX |= (0<<REFS1)|(1<<REFS0);// Опорное напряжение AVCC
+ 3bc:	3e 9a       	sbi	0x07, 6	; 7
+	ADMUX |= (0<<MUX3)|(0<<MUX2)|(0<<MUX1)|(1<<MUX0); //Выбор АЦП
+ 3be:	38 9a       	sbi	0x07, 0	; 7
+	ADMUX |= (0<<ADLAR);//Выравнивание по левому краю результата
+ 3c0:	87 b1       	in	r24, 0x07	; 7
+ 3c2:	87 b9       	out	0x07, r24	; 7
+	ADCSRA |= (1<<ADEN);//Вкл АЦП
+ 3c4:	37 9a       	sbi	0x06, 7	; 6
+	ADCSRA |= (1<<ADPS2)|(1<<ADPS1)|(1<<ADPS0);//Делитель частоты 128
+ 3c6:	86 b1       	in	r24, 0x06	; 6
+ 3c8:	87 60       	ori	r24, 0x07	; 7
+ 3ca:	86 b9       	out	0x06, r24	; 6
+	ADCSRA |= (1<<ADIE);// Разрешить прерывания
+ 3cc:	33 9a       	sbi	0x06, 3	; 6
+	ADCSRA |= (1<<ADFR);//Срабатывает автоматически
+ 3ce:	35 9a       	sbi	0x06, 5	; 6
+	ADCSRA |= (1<<ADSC);//Запуск 1го преобразования
+ 3d0:	36 9a       	sbi	0x06, 6	; 6
+	
+}
+ 3d2:	08 95       	ret
+
+000003d4 <MiganieH>:
+
+
+void MiganieH()
+{
+				PORTC=0b00000000; //Установка курсора в начало
+ 3d4:	15 ba       	out	0x15, r1	; 21
+				PORTC|=(1<<2);//E
+ 3d6:	aa 9a       	sbi	0x15, 2	; 21
+				PORTC&=~(1<<2);
+ 3d8:	aa 98       	cbi	0x15, 2	; 21
+				PORTC=0b00100000;
+ 3da:	80 e2       	ldi	r24, 0x20	; 32
+ 3dc:	85 bb       	out	0x15, r24	; 21
+				PORTC|=(1<<2);//E
+ 3de:	aa 9a       	sbi	0x15, 2	; 21
+				PORTC&=~(1<<2);
+ 3e0:	aa 98       	cbi	0x15, 2	; 21
+ 3e2:	8f e8       	ldi	r24, 0x8F	; 143
+ 3e4:	91 e0       	ldi	r25, 0x01	; 1
+ 3e6:	01 97       	sbiw	r24, 0x01	; 1
+ 3e8:	f1 f7       	brne	.-4      	; 0x3e6 <MiganieH+0x12>
+ 3ea:	00 c0       	rjmp	.+0      	; 0x3ec <MiganieH+0x18>
+ 3ec:	00 00       	nop
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 3ee:	8f ef       	ldi	r24, 0xFF	; 255
+ 3f0:	99 e6       	ldi	r25, 0x69	; 105
+ 3f2:	a8 e1       	ldi	r26, 0x18	; 24
+ 3f4:	81 50       	subi	r24, 0x01	; 1
+ 3f6:	90 40       	sbci	r25, 0x00	; 0
+ 3f8:	a0 40       	sbci	r26, 0x00	; 0
+ 3fa:	e1 f7       	brne	.-8      	; 0x3f4 <MiganieH+0x20>
+ 3fc:	00 c0       	rjmp	.+0      	; 0x3fe <MiganieH+0x2a>
+ 3fe:	00 00       	nop
+				_delay_us(100);
+				_delay_ms(500);
+				LCD_data(0x20);//Гасит часы
+ 400:	80 e2       	ldi	r24, 0x20	; 32
+ 402:	0e 94 04 01 	call	0x208	; 0x208 <LCD_data>
+				LCD_data(0x20);
+ 406:	80 e2       	ldi	r24, 0x20	; 32
+ 408:	0e 94 04 01 	call	0x208	; 0x208 <LCD_data>
+ 40c:	8f ef       	ldi	r24, 0xFF	; 255
+ 40e:	99 e6       	ldi	r25, 0x69	; 105
+ 410:	a8 e1       	ldi	r26, 0x18	; 24
+ 412:	81 50       	subi	r24, 0x01	; 1
+ 414:	90 40       	sbci	r25, 0x00	; 0
+ 416:	a0 40       	sbci	r26, 0x00	; 0
+ 418:	e1 f7       	brne	.-8      	; 0x412 <MiganieH+0x3e>
+ 41a:	00 c0       	rjmp	.+0      	; 0x41c <MiganieH+0x48>
+ 41c:	00 00       	nop
+				_delay_ms(500);
+		
+
+	i=PINA;
+ 41e:	89 b3       	in	r24, 0x19	; 25
+ 420:	80 93 18 01 	sts	0x0118, r24
+ 424:	10 92 19 01 	sts	0x0119, r1
+	if ((i&(1<<2))==0)
+ 428:	82 fd       	sbrc	r24, 2
+ 42a:	0c c0       	rjmp	.+24     	; 0x444 <MiganieH+0x70>
+ 42c:	8f ef       	ldi	r24, 0xFF	; 255
+ 42e:	92 e5       	ldi	r25, 0x52	; 82
+ 430:	a7 e0       	ldi	r26, 0x07	; 7
+ 432:	81 50       	subi	r24, 0x01	; 1
+ 434:	90 40       	sbci	r25, 0x00	; 0
+ 436:	a0 40       	sbci	r26, 0x00	; 0
+ 438:	e1 f7       	brne	.-8      	; 0x432 <MiganieH+0x5e>
+ 43a:	00 c0       	rjmp	.+0      	; 0x43c <MiganieH+0x68>
+ 43c:	00 00       	nop
+	{
+	_delay_ms(150);
+	q=2;
+ 43e:	82 e0       	ldi	r24, 0x02	; 2
+ 440:	80 93 17 01 	sts	0x0117, r24
+	}
+	
+	if ((i&(1<<0))==0)//Нажатие кнопки вверх
+ 444:	80 91 18 01 	lds	r24, 0x0118
+ 448:	80 fd       	sbrc	r24, 0
+ 44a:	0e c0       	rjmp	.+28     	; 0x468 <MiganieH+0x94>
+ 44c:	8f ef       	ldi	r24, 0xFF	; 255
+ 44e:	92 e5       	ldi	r25, 0x52	; 82
+ 450:	a7 e0       	ldi	r26, 0x07	; 7
+ 452:	81 50       	subi	r24, 0x01	; 1
+ 454:	90 40       	sbci	r25, 0x00	; 0
+ 456:	a0 40       	sbci	r26, 0x00	; 0
+ 458:	e1 f7       	brne	.-8      	; 0x452 <MiganieH+0x7e>
+ 45a:	00 c0       	rjmp	.+0      	; 0x45c <MiganieH+0x88>
+ 45c:	00 00       	nop
+	{
+		_delay_ms(150);
+		H++;
+ 45e:	80 91 16 01 	lds	r24, 0x0116
+ 462:	8f 5f       	subi	r24, 0xFF	; 255
+ 464:	80 93 16 01 	sts	0x0116, r24
+	}
+	if ((i&(1<<4))==0)//Нажатие кнопки Вниз
+ 468:	80 91 18 01 	lds	r24, 0x0118
+ 46c:	84 fd       	sbrc	r24, 4
+ 46e:	0e c0       	rjmp	.+28     	; 0x48c <MiganieH+0xb8>
+ 470:	8f ef       	ldi	r24, 0xFF	; 255
+ 472:	92 e5       	ldi	r25, 0x52	; 82
+ 474:	a7 e0       	ldi	r26, 0x07	; 7
+ 476:	81 50       	subi	r24, 0x01	; 1
+ 478:	90 40       	sbci	r25, 0x00	; 0
+ 47a:	a0 40       	sbci	r26, 0x00	; 0
+ 47c:	e1 f7       	brne	.-8      	; 0x476 <MiganieH+0xa2>
+ 47e:	00 c0       	rjmp	.+0      	; 0x480 <MiganieH+0xac>
+ 480:	00 00       	nop
+	{
+		_delay_ms(150);
+		H--;
+ 482:	80 91 16 01 	lds	r24, 0x0116
+ 486:	81 50       	subi	r24, 0x01	; 1
+ 488:	80 93 16 01 	sts	0x0116, r24
+ 48c:	08 95       	ret
+
+0000048e <MiganieM>:
+		
+}
+
+void MiganieM() // Мигание Минут
+{
+	PORTC=0b10000000; //Установка курсора по адресу
+ 48e:	80 e8       	ldi	r24, 0x80	; 128
+ 490:	85 bb       	out	0x15, r24	; 21
+	PORTC|=(1<<2);//E
+ 492:	aa 9a       	sbi	0x15, 2	; 21
+	PORTC&=~(1<<2);
+ 494:	aa 98       	cbi	0x15, 2	; 21
+	PORTC=0b00110000;//адрес 0х03 вторая строка
+ 496:	80 e3       	ldi	r24, 0x30	; 48
+ 498:	85 bb       	out	0x15, r24	; 21
+	PORTC|=(1<<2);//E
+ 49a:	aa 9a       	sbi	0x15, 2	; 21
+	PORTC&=~(1<<2);
+ 49c:	aa 98       	cbi	0x15, 2	; 21
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 49e:	8f e8       	ldi	r24, 0x8F	; 143
+ 4a0:	91 e0       	ldi	r25, 0x01	; 1
+ 4a2:	01 97       	sbiw	r24, 0x01	; 1
+ 4a4:	f1 f7       	brne	.-4      	; 0x4a2 <MiganieM+0x14>
+ 4a6:	00 c0       	rjmp	.+0      	; 0x4a8 <MiganieM+0x1a>
+ 4a8:	00 00       	nop
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 4aa:	8f ef       	ldi	r24, 0xFF	; 255
+ 4ac:	99 e6       	ldi	r25, 0x69	; 105
+ 4ae:	a8 e1       	ldi	r26, 0x18	; 24
+ 4b0:	81 50       	subi	r24, 0x01	; 1
+ 4b2:	90 40       	sbci	r25, 0x00	; 0
+ 4b4:	a0 40       	sbci	r26, 0x00	; 0
+ 4b6:	e1 f7       	brne	.-8      	; 0x4b0 <MiganieM+0x22>
+ 4b8:	00 c0       	rjmp	.+0      	; 0x4ba <MiganieM+0x2c>
+ 4ba:	00 00       	nop
+	_delay_us(100);
+	
+	_delay_ms(500);
+				LCD_data(0x20);//Гасит Минуты
+ 4bc:	80 e2       	ldi	r24, 0x20	; 32
+ 4be:	0e 94 04 01 	call	0x208	; 0x208 <LCD_data>
+				LCD_data(0x20);
+ 4c2:	80 e2       	ldi	r24, 0x20	; 32
+ 4c4:	0e 94 04 01 	call	0x208	; 0x208 <LCD_data>
+ 4c8:	8f ef       	ldi	r24, 0xFF	; 255
+ 4ca:	99 e6       	ldi	r25, 0x69	; 105
+ 4cc:	a8 e1       	ldi	r26, 0x18	; 24
+ 4ce:	81 50       	subi	r24, 0x01	; 1
+ 4d0:	90 40       	sbci	r25, 0x00	; 0
+ 4d2:	a0 40       	sbci	r26, 0x00	; 0
+ 4d4:	e1 f7       	brne	.-8      	; 0x4ce <MiganieM+0x40>
+ 4d6:	00 c0       	rjmp	.+0      	; 0x4d8 <MiganieM+0x4a>
+ 4d8:	00 00       	nop
+				_delay_ms(500);
+			i=PINA;
+ 4da:	89 b3       	in	r24, 0x19	; 25
+ 4dc:	80 93 18 01 	sts	0x0118, r24
+ 4e0:	10 92 19 01 	sts	0x0119, r1
+	if ((i&(1<<2))==0)
+ 4e4:	82 fd       	sbrc	r24, 2
+ 4e6:	0b c0       	rjmp	.+22     	; 0x4fe <MiganieM+0x70>
+ 4e8:	8f ef       	ldi	r24, 0xFF	; 255
+ 4ea:	92 e5       	ldi	r25, 0x52	; 82
+ 4ec:	a7 e0       	ldi	r26, 0x07	; 7
+ 4ee:	81 50       	subi	r24, 0x01	; 1
+ 4f0:	90 40       	sbci	r25, 0x00	; 0
+ 4f2:	a0 40       	sbci	r26, 0x00	; 0
+ 4f4:	e1 f7       	brne	.-8      	; 0x4ee <MiganieM+0x60>
+ 4f6:	00 c0       	rjmp	.+0      	; 0x4f8 <MiganieM+0x6a>
+ 4f8:	00 00       	nop
+	{
+	_delay_ms(150);
+	q=0;
+ 4fa:	10 92 17 01 	sts	0x0117, r1
+	}
+	
+	if ((i&(1<<0))==0)//Нажатие кнопки вверх
+ 4fe:	80 91 18 01 	lds	r24, 0x0118
+ 502:	80 fd       	sbrc	r24, 0
+ 504:	0e c0       	rjmp	.+28     	; 0x522 <MiganieM+0x94>
+ 506:	8f ef       	ldi	r24, 0xFF	; 255
+ 508:	92 e5       	ldi	r25, 0x52	; 82
+ 50a:	a7 e0       	ldi	r26, 0x07	; 7
+ 50c:	81 50       	subi	r24, 0x01	; 1
+ 50e:	90 40       	sbci	r25, 0x00	; 0
+ 510:	a0 40       	sbci	r26, 0x00	; 0
+ 512:	e1 f7       	brne	.-8      	; 0x50c <MiganieM+0x7e>
+ 514:	00 c0       	rjmp	.+0      	; 0x516 <MiganieM+0x88>
+ 516:	00 00       	nop
+	{
+		_delay_ms(150);
+		M++;
+ 518:	80 91 15 01 	lds	r24, 0x0115
+ 51c:	8f 5f       	subi	r24, 0xFF	; 255
+ 51e:	80 93 15 01 	sts	0x0115, r24
+	}
+	if ((i&(1<<4))==0)//Нажатие кнопки Вниз
+ 522:	80 91 18 01 	lds	r24, 0x0118
+ 526:	84 fd       	sbrc	r24, 4
+ 528:	0e c0       	rjmp	.+28     	; 0x546 <MiganieM+0xb8>
+ 52a:	8f ef       	ldi	r24, 0xFF	; 255
+ 52c:	92 e5       	ldi	r25, 0x52	; 82
+ 52e:	a7 e0       	ldi	r26, 0x07	; 7
+ 530:	81 50       	subi	r24, 0x01	; 1
+ 532:	90 40       	sbci	r25, 0x00	; 0
+ 534:	a0 40       	sbci	r26, 0x00	; 0
+ 536:	e1 f7       	brne	.-8      	; 0x530 <MiganieM+0xa2>
+ 538:	00 c0       	rjmp	.+0      	; 0x53a <MiganieM+0xac>
+ 53a:	00 00       	nop
+	{
+		_delay_ms(150);
+		M--;
+ 53c:	80 91 15 01 	lds	r24, 0x0115
+ 540:	81 50       	subi	r24, 0x01	; 1
+ 542:	80 93 15 01 	sts	0x0115, r24
+ 546:	08 95       	ret
+
+00000548 <main>:
+	}
+}
+
+int main(void)
+{
+ 548:	bf 92       	push	r11
+ 54a:	cf 92       	push	r12
+ 54c:	df 92       	push	r13
+ 54e:	ef 92       	push	r14
+ 550:	ff 92       	push	r15
+ 552:	0f 93       	push	r16
+ 554:	1f 93       	push	r17
+ 556:	df 93       	push	r29
+ 558:	cf 93       	push	r28
+ 55a:	cd b7       	in	r28, 0x3d	; 61
+ 55c:	de b7       	in	r29, 0x3e	; 62
+ 55e:	60 97       	sbiw	r28, 0x10	; 16
+ 560:	0f b6       	in	r0, 0x3f	; 63
+ 562:	f8 94       	cli
+ 564:	de bf       	out	0x3e, r29	; 62
+ 566:	0f be       	out	0x3f, r0	; 63
+ 568:	cd bf       	out	0x3d, r28	; 61
+
+	InitPorts();//Инициализация портов
+ 56a:	0e 94 67 00 	call	0xce	; 0xce <InitPorts>
+	InitT0();//Инициализация асинхронного таймера Т0
+ 56e:	0e 94 71 00 	call	0xe2	; 0xe2 <InitT0>
+	InitLCD();//Инициализация дисплея LCD
+ 572:	0e 94 86 00 	call	0x10c	; 0x10c <InitLCD>
+	INITADC();//Инициализация АЦП
+ 576:	0e 94 de 01 	call	0x3bc	; 0x3bc <INITADC>
+	sei();
+ 57a:	78 94       	sei
+
+	//Символ термометра
+	unsigned int t[8]={0x4,0xA,0xA,0xE,0xE,0x1F,0x17,0xE};
+ 57c:	de 01       	movw	r26, r28
+ 57e:	11 96       	adiw	r26, 0x01	; 1
+ 580:	e0 e0       	ldi	r30, 0x00	; 0
+ 582:	f1 e0       	ldi	r31, 0x01	; 1
+ 584:	80 e1       	ldi	r24, 0x10	; 16
+ 586:	01 90       	ld	r0, Z+
+ 588:	0d 92       	st	X+, r0
+ 58a:	81 50       	subi	r24, 0x01	; 1
+ 58c:	e1 f7       	brne	.-8      	; 0x586 <main+0x3e>
+	PORTC=0b01000000; //Установка курсора по адресу
+ 58e:	80 e4       	ldi	r24, 0x40	; 64
+ 590:	85 bb       	out	0x15, r24	; 21
+	PORTC|=(1<<2);//E
+ 592:	aa 9a       	sbi	0x15, 2	; 21
+	PORTC&=~(1<<2);
+ 594:	aa 98       	cbi	0x15, 2	; 21
+	PORTC=0b00000000;//адрес 0х00 вторая строка
+ 596:	15 ba       	out	0x15, r1	; 21
+	PORTC|=(1<<2);//E
+ 598:	aa 9a       	sbi	0x15, 2	; 21
+	PORTC&=~(1<<2);
+ 59a:	aa 98       	cbi	0x15, 2	; 21
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 59c:	8f e8       	ldi	r24, 0x8F	; 143
+ 59e:	91 e0       	ldi	r25, 0x01	; 1
+ 5a0:	01 97       	sbiw	r24, 0x01	; 1
+ 5a2:	f1 f7       	brne	.-4      	; 0x5a0 <main+0x58>
+ 5a4:	00 c0       	rjmp	.+0      	; 0x5a6 <main+0x5e>
+ 5a6:	00 00       	nop
+	_delay_us(100);
+	
+	for (i=0;i<8;i++)
+ 5a8:	10 92 19 01 	sts	0x0119, r1
+ 5ac:	10 92 18 01 	sts	0x0118, r1
+ 5b0:	80 e0       	ldi	r24, 0x00	; 0
+ 5b2:	90 e0       	ldi	r25, 0x00	; 0
+	{
+		LCD_data(t[i]);
+ 5b4:	8e 01       	movw	r16, r28
+ 5b6:	0f 5f       	subi	r16, 0xFF	; 255
+ 5b8:	1f 4f       	sbci	r17, 0xFF	; 255
+ 5ba:	88 0f       	add	r24, r24
+ 5bc:	99 1f       	adc	r25, r25
+ 5be:	f8 01       	movw	r30, r16
+ 5c0:	e8 0f       	add	r30, r24
+ 5c2:	f9 1f       	adc	r31, r25
+ 5c4:	80 81       	ld	r24, Z
+ 5c6:	0e 94 04 01 	call	0x208	; 0x208 <LCD_data>
+	PORTC=0b00000000;//адрес 0х00 вторая строка
+	PORTC|=(1<<2);//E
+	PORTC&=~(1<<2);
+	_delay_us(100);
+	
+	for (i=0;i<8;i++)
+ 5ca:	80 91 18 01 	lds	r24, 0x0118
+ 5ce:	90 91 19 01 	lds	r25, 0x0119
+ 5d2:	01 96       	adiw	r24, 0x01	; 1
+ 5d4:	90 93 19 01 	sts	0x0119, r25
+ 5d8:	80 93 18 01 	sts	0x0118, r24
+ 5dc:	88 30       	cpi	r24, 0x08	; 8
+ 5de:	91 05       	cpc	r25, r1
+ 5e0:	60 f3       	brcs	.-40     	; 0x5ba <main+0x72>
+	{
+		LCD_data(t[i]);
+	}
+	//Вывод градусника
+	PORTC=0b10000000; //Установка курсора по адресу
+ 5e2:	00 e8       	ldi	r16, 0x80	; 128
+ 5e4:	05 bb       	out	0x15, r16	; 21
+	PORTC|=(1<<2);//E
+ 5e6:	aa 9a       	sbi	0x15, 2	; 21
+	PORTC&=~(1<<2);
+ 5e8:	aa 98       	cbi	0x15, 2	; 21
+	PORTC=0b10110000;//адрес 0х0B вторая строка
+ 5ea:	80 eb       	ldi	r24, 0xB0	; 176
+ 5ec:	85 bb       	out	0x15, r24	; 21
+	PORTC|=(1<<2);//E
+ 5ee:	aa 9a       	sbi	0x15, 2	; 21
+	PORTC&=~(1<<2);
+ 5f0:	aa 98       	cbi	0x15, 2	; 21
+ 5f2:	af e8       	ldi	r26, 0x8F	; 143
+ 5f4:	b1 e0       	ldi	r27, 0x01	; 1
+ 5f6:	11 97       	sbiw	r26, 0x01	; 1
+ 5f8:	f1 f7       	brne	.-4      	; 0x5f6 <main+0xae>
+ 5fa:	00 c0       	rjmp	.+0      	; 0x5fc <main+0xb4>
+ 5fc:	00 00       	nop
+	_delay_us(100);
+	
+	LCD_data(0);
+ 5fe:	80 e0       	ldi	r24, 0x00	; 0
+ 600:	0e 94 04 01 	call	0x208	; 0x208 <LCD_data>
+	//вывод С
+	PORTC=0b10000000; //Установка курсора по адресу
+ 604:	05 bb       	out	0x15, r16	; 21
+	PORTC|=(1<<2);//E
+ 606:	aa 9a       	sbi	0x15, 2	; 21
+	PORTC&=~(1<<2);
+ 608:	aa 98       	cbi	0x15, 2	; 21
+	PORTC=0b11110000;//адрес 0х0E вторая строка
+ 60a:	80 ef       	ldi	r24, 0xF0	; 240
+ 60c:	85 bb       	out	0x15, r24	; 21
+	PORTC|=(1<<2);//E
+ 60e:	aa 9a       	sbi	0x15, 2	; 21
+	PORTC&=~(1<<2);
+ 610:	aa 98       	cbi	0x15, 2	; 21
+ 612:	ef e8       	ldi	r30, 0x8F	; 143
+ 614:	f1 e0       	ldi	r31, 0x01	; 1
+ 616:	31 97       	sbiw	r30, 0x01	; 1
+ 618:	f1 f7       	brne	.-4      	; 0x616 <main+0xce>
+ 61a:	00 c0       	rjmp	.+0      	; 0x61c <main+0xd4>
+ 61c:	00 00       	nop
+	_delay_us(100);
+	//LCD_data(0x6F);
+	LCD_data(0x43);
+ 61e:	83 e4       	ldi	r24, 0x43	; 67
+ 620:	0e 94 04 01 	call	0x208	; 0x208 <LCD_data>
+	
+	
+	PORTC=0b11000000; //Установка курсора по адресу
+ 624:	80 ec       	ldi	r24, 0xC0	; 192
+ 626:	85 bb       	out	0x15, r24	; 21
+	PORTC|=(1<<2);//E
+ 628:	aa 9a       	sbi	0x15, 2	; 21
+	PORTC&=~(1<<2);
+ 62a:	aa 98       	cbi	0x15, 2	; 21
+	PORTC=0b00000000;//адрес 0х40 вторая строка
+ 62c:	15 ba       	out	0x15, r1	; 21
+	PORTC|=(1<<2);//E
+ 62e:	aa 9a       	sbi	0x15, 2	; 21
+	PORTC&=~(1<<2);
+ 630:	aa 98       	cbi	0x15, 2	; 21
+ 632:	8f e8       	ldi	r24, 0x8F	; 143
+ 634:	91 e0       	ldi	r25, 0x01	; 1
+ 636:	01 97       	sbiw	r24, 0x01	; 1
+ 638:	f1 f7       	brne	.-4      	; 0x636 <main+0xee>
+ 63a:	00 c0       	rjmp	.+0      	; 0x63c <main+0xf4>
+ 63c:	00 00       	nop
+	_delay_us(100);
+	
+	LCD_data('H');
+ 63e:	88 e4       	ldi	r24, 0x48	; 72
+ 640:	0e 94 04 01 	call	0x208	; 0x208 <LCD_data>
+	LCD_data('e');	
+ 644:	85 e6       	ldi	r24, 0x65	; 101
+ 646:	0e 94 04 01 	call	0x208	; 0x208 <LCD_data>
+	LCD_data('l');
+ 64a:	8c e6       	ldi	r24, 0x6C	; 108
+ 64c:	0e 94 04 01 	call	0x208	; 0x208 <LCD_data>
+	LCD_data('l');
+ 650:	8c e6       	ldi	r24, 0x6C	; 108
+ 652:	0e 94 04 01 	call	0x208	; 0x208 <LCD_data>
+	LCD_data('o');	
+ 656:	8f e6       	ldi	r24, 0x6F	; 111
+ 658:	0e 94 04 01 	call	0x208	; 0x208 <LCD_data>
+	{
+	
+		PORTC=0b00000000; //Установка курсора в начало
+		PORTC|=(1<<2);//E
+		PORTC&=~(1<<2);
+		PORTC=0b00100000;
+ 65c:	ee 24       	eor	r14, r14
+ 65e:	68 94       	set
+ 660:	e5 f8       	bld	r14, 5
+	PORTC=0b00100000;
+	PORTC|=(1<<2);//E
+	PORTC&=~(1<<2);
+	_delay_us(100);
+	
+	i=H/10;//первая часть часа
+ 662:	0f 2e       	mov	r0, r31
+ 664:	fa e0       	ldi	r31, 0x0A	; 10
+ 666:	ff 2e       	mov	r15, r31
+ 668:	f0 2d       	mov	r31, r0
+			_delay_ms(500);
+			i=PINA;
+			if ((i&(1<<2))==0)
+			{
+				_delay_ms(100);
+				q=1;
+ 66a:	bb 24       	eor	r11, r11
+ 66c:	b3 94       	inc	r11
+			}
+	}
+	if ((i&(1<<1))==0)//eeprom	
+	{
+		_delay_ms(200);
+		eeprom_write_byte(&w ,q);
+ 66e:	00 e0       	ldi	r16, 0x00	; 0
+ 670:	10 e0       	ldi	r17, 0x00	; 0
+	if ((i&(1<<3))==0)//eeprom	
+	{ 
+		_delay_ms(200);
+		q=eeprom_read_byte(&w);//читает
+		
+		PORTC=0b11000000; //Установка курсора по адресу
+ 672:	0f 2e       	mov	r0, r31
+ 674:	f0 ec       	ldi	r31, 0xC0	; 192
+ 676:	df 2e       	mov	r13, r31
+ 678:	f0 2d       	mov	r31, r0
+		PORTC|=(1<<2);//E
+		PORTC&=~(1<<2);
+		PORTC=0b01100000;//адрес 0х46 вторая строка
+ 67a:	0f 2e       	mov	r0, r31
+ 67c:	f0 e6       	ldi	r31, 0x60	; 96
+ 67e:	cf 2e       	mov	r12, r31
+ 680:	f0 2d       	mov	r31, r0
+	LCD_data('o');	
+	
+	while(1)
+	{
+	
+		PORTC=0b00000000; //Установка курсора в начало
+ 682:	15 ba       	out	0x15, r1	; 21
+		PORTC|=(1<<2);//E
+ 684:	aa 9a       	sbi	0x15, 2	; 21
+		PORTC&=~(1<<2);
+ 686:	aa 98       	cbi	0x15, 2	; 21
+		PORTC=0b00100000;
+ 688:	e5 ba       	out	0x15, r14	; 21
+		PORTC|=(1<<2);//E
+ 68a:	aa 9a       	sbi	0x15, 2	; 21
+		PORTC&=~(1<<2);
+ 68c:	aa 98       	cbi	0x15, 2	; 21
+ 68e:	af e8       	ldi	r26, 0x8F	; 143
+ 690:	b1 e0       	ldi	r27, 0x01	; 1
+ 692:	11 97       	sbiw	r26, 0x01	; 1
+ 694:	f1 f7       	brne	.-4      	; 0x692 <main+0x14a>
+ 696:	00 c0       	rjmp	.+0      	; 0x698 <main+0x150>
+ 698:	00 00       	nop
+		_delay_us(100);	
+		
+	
+		if (X>59) //Секунды
+ 69a:	80 91 14 01 	lds	r24, 0x0114
+ 69e:	8c 33       	cpi	r24, 0x3C	; 60
+ 6a0:	38 f0       	brcs	.+14     	; 0x6b0 <main+0x168>
+			{ 
+			X=0;
+ 6a2:	10 92 14 01 	sts	0x0114, r1
+			M=M+1;
+ 6a6:	80 91 15 01 	lds	r24, 0x0115
+ 6aa:	8f 5f       	subi	r24, 0xFF	; 255
+ 6ac:	80 93 15 01 	sts	0x0115, r24
+			}
+		if (M>59) //Минуты
+ 6b0:	80 91 15 01 	lds	r24, 0x0115
+ 6b4:	8c 33       	cpi	r24, 0x3C	; 60
+ 6b6:	38 f0       	brcs	.+14     	; 0x6c6 <main+0x17e>
+			{ 
+			M=0;
+ 6b8:	10 92 15 01 	sts	0x0115, r1
+			H=H+1;
+ 6bc:	80 91 16 01 	lds	r24, 0x0116
+ 6c0:	8f 5f       	subi	r24, 0xFF	; 255
+ 6c2:	80 93 16 01 	sts	0x0116, r24
+			}
+		if (H>23) //Часы
+ 6c6:	80 91 16 01 	lds	r24, 0x0116
+ 6ca:	88 31       	cpi	r24, 0x18	; 24
+ 6cc:	10 f0       	brcs	.+4      	; 0x6d2 <main+0x18a>
+			{ 
+			H=0;
+ 6ce:	10 92 16 01 	sts	0x0116, r1
+			}
+	
+	//вычисление визуальных данных для дисплея
+		
+	PORTC=0b00000000; //Установка курсора в начало
+ 6d2:	15 ba       	out	0x15, r1	; 21
+	PORTC|=(1<<2);//E
+ 6d4:	aa 9a       	sbi	0x15, 2	; 21
+	PORTC&=~(1<<2);
+ 6d6:	aa 98       	cbi	0x15, 2	; 21
+	PORTC=0b00100000;
+ 6d8:	e5 ba       	out	0x15, r14	; 21
+	PORTC|=(1<<2);//E
+ 6da:	aa 9a       	sbi	0x15, 2	; 21
+	PORTC&=~(1<<2);
+ 6dc:	aa 98       	cbi	0x15, 2	; 21
+ 6de:	ef e8       	ldi	r30, 0x8F	; 143
+ 6e0:	f1 e0       	ldi	r31, 0x01	; 1
+ 6e2:	31 97       	sbiw	r30, 0x01	; 1
+ 6e4:	f1 f7       	brne	.-4      	; 0x6e2 <main+0x19a>
+ 6e6:	00 c0       	rjmp	.+0      	; 0x6e8 <main+0x1a0>
+ 6e8:	00 00       	nop
+	_delay_us(100);
+	
+	i=H/10;//первая часть часа
+ 6ea:	80 91 16 01 	lds	r24, 0x0116
+ 6ee:	6f 2d       	mov	r22, r15
+ 6f0:	0e 94 b2 05 	call	0xb64	; 0xb64 <__udivmodqi4>
+ 6f4:	90 e0       	ldi	r25, 0x00	; 0
+	i=i+0x30;
+ 6f6:	c0 96       	adiw	r24, 0x30	; 48
+ 6f8:	90 93 19 01 	sts	0x0119, r25
+ 6fc:	80 93 18 01 	sts	0x0118, r24
+	LCD_data(i);
+ 700:	0e 94 04 01 	call	0x208	; 0x208 <LCD_data>
+	
+	if(H<9)
+ 704:	80 91 16 01 	lds	r24, 0x0116
+ 708:	89 30       	cpi	r24, 0x09	; 9
+ 70a:	48 f4       	brcc	.+18     	; 0x71e <main+0x1d6>
+	{
+		i=H+0x30;
+ 70c:	90 e0       	ldi	r25, 0x00	; 0
+ 70e:	c0 96       	adiw	r24, 0x30	; 48
+ 710:	90 93 19 01 	sts	0x0119, r25
+ 714:	80 93 18 01 	sts	0x0118, r24
+		LCD_data(i);
+ 718:	0e 94 04 01 	call	0x208	; 0x208 <LCD_data>
+ 71c:	1a c0       	rjmp	.+52     	; 0x752 <main+0x20a>
+	}
+	else
+	{
+		i=H-((i-0x30)*10);//вторая часть часа
+ 71e:	90 e0       	ldi	r25, 0x00	; 0
+ 720:	80 5f       	subi	r24, 0xF0	; 240
+ 722:	9d 4f       	sbci	r25, 0xFD	; 253
+ 724:	20 91 18 01 	lds	r18, 0x0118
+ 728:	30 91 19 01 	lds	r19, 0x0119
+ 72c:	a9 01       	movw	r20, r18
+ 72e:	44 0f       	add	r20, r20
+ 730:	55 1f       	adc	r21, r21
+ 732:	22 0f       	add	r18, r18
+ 734:	33 1f       	adc	r19, r19
+ 736:	22 0f       	add	r18, r18
+ 738:	33 1f       	adc	r19, r19
+ 73a:	22 0f       	add	r18, r18
+ 73c:	33 1f       	adc	r19, r19
+ 73e:	24 0f       	add	r18, r20
+ 740:	35 1f       	adc	r19, r21
+		i=i+0x30;
+ 742:	82 1b       	sub	r24, r18
+ 744:	93 0b       	sbc	r25, r19
+ 746:	90 93 19 01 	sts	0x0119, r25
+ 74a:	80 93 18 01 	sts	0x0118, r24
+		LCD_data(i);	
+ 74e:	0e 94 04 01 	call	0x208	; 0x208 <LCD_data>
+	}	
+	LCD_data(':');
+ 752:	8a e3       	ldi	r24, 0x3A	; 58
+ 754:	0e 94 04 01 	call	0x208	; 0x208 <LCD_data>
+	
+	i=M/10;//первая часть минут
+ 758:	80 91 15 01 	lds	r24, 0x0115
+ 75c:	6f 2d       	mov	r22, r15
+ 75e:	0e 94 b2 05 	call	0xb64	; 0xb64 <__udivmodqi4>
+ 762:	90 e0       	ldi	r25, 0x00	; 0
+	i=i+0x30;
+ 764:	c0 96       	adiw	r24, 0x30	; 48
+ 766:	90 93 19 01 	sts	0x0119, r25
+ 76a:	80 93 18 01 	sts	0x0118, r24
+	LCD_data(i);		
+ 76e:	0e 94 04 01 	call	0x208	; 0x208 <LCD_data>
+	
+	if(M<9)
+ 772:	80 91 15 01 	lds	r24, 0x0115
+ 776:	89 30       	cpi	r24, 0x09	; 9
+ 778:	48 f4       	brcc	.+18     	; 0x78c <main+0x244>
+	{
+		i=M+0x30;
+ 77a:	90 e0       	ldi	r25, 0x00	; 0
+ 77c:	c0 96       	adiw	r24, 0x30	; 48
+ 77e:	90 93 19 01 	sts	0x0119, r25
+ 782:	80 93 18 01 	sts	0x0118, r24
+		LCD_data(i);
+ 786:	0e 94 04 01 	call	0x208	; 0x208 <LCD_data>
+ 78a:	1a c0       	rjmp	.+52     	; 0x7c0 <main+0x278>
+	}
+	else
+	{
+		i=M-((i-0x30)*10);//вторая часть минут
+ 78c:	90 e0       	ldi	r25, 0x00	; 0
+ 78e:	80 5f       	subi	r24, 0xF0	; 240
+ 790:	9d 4f       	sbci	r25, 0xFD	; 253
+ 792:	20 91 18 01 	lds	r18, 0x0118
+ 796:	30 91 19 01 	lds	r19, 0x0119
+ 79a:	a9 01       	movw	r20, r18
+ 79c:	44 0f       	add	r20, r20
+ 79e:	55 1f       	adc	r21, r21
+ 7a0:	22 0f       	add	r18, r18
+ 7a2:	33 1f       	adc	r19, r19
+ 7a4:	22 0f       	add	r18, r18
+ 7a6:	33 1f       	adc	r19, r19
+ 7a8:	22 0f       	add	r18, r18
+ 7aa:	33 1f       	adc	r19, r19
+ 7ac:	24 0f       	add	r18, r20
+ 7ae:	35 1f       	adc	r19, r21
+		i=i+0x30;
+ 7b0:	82 1b       	sub	r24, r18
+ 7b2:	93 0b       	sbc	r25, r19
+ 7b4:	90 93 19 01 	sts	0x0119, r25
+ 7b8:	80 93 18 01 	sts	0x0118, r24
+		LCD_data(i);	
+ 7bc:	0e 94 04 01 	call	0x208	; 0x208 <LCD_data>
+	}
+	LCD_data(':');
+ 7c0:	8a e3       	ldi	r24, 0x3A	; 58
+ 7c2:	0e 94 04 01 	call	0x208	; 0x208 <LCD_data>
+	
+	i=X/10;//первая часть секунд
+ 7c6:	80 91 14 01 	lds	r24, 0x0114
+ 7ca:	6f 2d       	mov	r22, r15
+ 7cc:	0e 94 b2 05 	call	0xb64	; 0xb64 <__udivmodqi4>
+ 7d0:	90 e0       	ldi	r25, 0x00	; 0
+	i=i+0x30;
+ 7d2:	c0 96       	adiw	r24, 0x30	; 48
+ 7d4:	90 93 19 01 	sts	0x0119, r25
+ 7d8:	80 93 18 01 	sts	0x0118, r24
+	LCD_data(i);		
+ 7dc:	0e 94 04 01 	call	0x208	; 0x208 <LCD_data>
+	if(i==0)
+ 7e0:	20 91 18 01 	lds	r18, 0x0118
+ 7e4:	30 91 19 01 	lds	r19, 0x0119
+ 7e8:	21 15       	cp	r18, r1
+ 7ea:	31 05       	cpc	r19, r1
+ 7ec:	59 f4       	brne	.+22     	; 0x804 <main+0x2bc>
+	{
+		i=X+0x30;
+ 7ee:	80 91 14 01 	lds	r24, 0x0114
+ 7f2:	90 e0       	ldi	r25, 0x00	; 0
+ 7f4:	c0 96       	adiw	r24, 0x30	; 48
+ 7f6:	90 93 19 01 	sts	0x0119, r25
+ 7fa:	80 93 18 01 	sts	0x0118, r24
+		LCD_data(i);
+ 7fe:	0e 94 04 01 	call	0x208	; 0x208 <LCD_data>
+ 802:	18 c0       	rjmp	.+48     	; 0x834 <main+0x2ec>
+	}
+	else
+	{
+		i=X-((i-0x30)*10);//вторая часть секунд
+ 804:	80 91 14 01 	lds	r24, 0x0114
+ 808:	90 e0       	ldi	r25, 0x00	; 0
+ 80a:	80 5f       	subi	r24, 0xF0	; 240
+ 80c:	9d 4f       	sbci	r25, 0xFD	; 253
+ 80e:	a9 01       	movw	r20, r18
+ 810:	44 0f       	add	r20, r20
+ 812:	55 1f       	adc	r21, r21
+ 814:	22 0f       	add	r18, r18
+ 816:	33 1f       	adc	r19, r19
+ 818:	22 0f       	add	r18, r18
+ 81a:	33 1f       	adc	r19, r19
+ 81c:	22 0f       	add	r18, r18
+ 81e:	33 1f       	adc	r19, r19
+ 820:	24 0f       	add	r18, r20
+ 822:	35 1f       	adc	r19, r21
+		i=i+0x30;
+ 824:	82 1b       	sub	r24, r18
+ 826:	93 0b       	sbc	r25, r19
+ 828:	90 93 19 01 	sts	0x0119, r25
+ 82c:	80 93 18 01 	sts	0x0118, r24
+		LCD_data(i);	
+ 830:	0e 94 04 01 	call	0x208	; 0x208 <LCD_data>
+	}
+		
+	//Вывод АЦП
+	Tamperatyra();
+ 834:	0e 94 6b 01 	call	0x2d6	; 0x2d6 <Tamperatyra>
+	
+	if (ACL<=2)//вкл реле при Т<2
+ 838:	80 91 12 01 	lds	r24, 0x0112
+ 83c:	90 91 13 01 	lds	r25, 0x0113
+ 840:	83 30       	cpi	r24, 0x03	; 3
+ 842:	91 05       	cpc	r25, r1
+ 844:	08 f4       	brcc	.+2      	; 0x848 <main+0x300>
+	{
+		PORTA|=(1<<6);
+ 846:	de 9a       	sbi	0x1b, 6	; 27
+	}
+	
+	if (ACL>=5)//выкл реле при Т>5
+ 848:	80 91 12 01 	lds	r24, 0x0112
+ 84c:	90 91 13 01 	lds	r25, 0x0113
+ 850:	85 30       	cpi	r24, 0x05	; 5
+ 852:	91 05       	cpc	r25, r1
+ 854:	08 f0       	brcs	.+2      	; 0x858 <main+0x310>
+	{
+		PORTA&=~(1<<6);
+ 856:	de 98       	cbi	0x1b, 6	; 27
+	}
+	
+	ADCtest();
+ 858:	0e 94 b1 01 	call	0x362	; 0x362 <ADCtest>
+		
+	LCD_data(ACH+0x30);//Выводим еденицы
+
+*/
+	
+	ADCSRA |= (1<<ADIE);//Вкл прерывание по ацп
+ 85c:	33 9a       	sbi	0x06, 3	; 6
+	
+	
+	//Нажатие кнопки
+	
+	i=PINA;//считываем порт
+ 85e:	89 b3       	in	r24, 0x19	; 25
+ 860:	80 93 18 01 	sts	0x0118, r24
+ 864:	10 92 19 01 	sts	0x0119, r1
+	if ((i&(1<<2))==0)
+ 868:	82 fd       	sbrc	r24, 2
+ 86a:	19 c0       	rjmp	.+50     	; 0x89e <main+0x356>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 86c:	8f ef       	ldi	r24, 0xFF	; 255
+ 86e:	99 e6       	ldi	r25, 0x69	; 105
+ 870:	a8 e1       	ldi	r26, 0x18	; 24
+ 872:	81 50       	subi	r24, 0x01	; 1
+ 874:	90 40       	sbci	r25, 0x00	; 0
+ 876:	a0 40       	sbci	r26, 0x00	; 0
+ 878:	e1 f7       	brne	.-8      	; 0x872 <main+0x32a>
+ 87a:	00 c0       	rjmp	.+0      	; 0x87c <main+0x334>
+ 87c:	00 00       	nop
+	{
+			_delay_ms(500);
+			i=PINA;
+ 87e:	89 b3       	in	r24, 0x19	; 25
+ 880:	80 93 18 01 	sts	0x0118, r24
+			if ((i&(1<<2))==0)
+ 884:	82 fd       	sbrc	r24, 2
+ 886:	0b c0       	rjmp	.+22     	; 0x89e <main+0x356>
+ 888:	8f ef       	ldi	r24, 0xFF	; 255
+ 88a:	91 ee       	ldi	r25, 0xE1	; 225
+ 88c:	a4 e0       	ldi	r26, 0x04	; 4
+ 88e:	81 50       	subi	r24, 0x01	; 1
+ 890:	90 40       	sbci	r25, 0x00	; 0
+ 892:	a0 40       	sbci	r26, 0x00	; 0
+ 894:	e1 f7       	brne	.-8      	; 0x88e <main+0x346>
+ 896:	00 c0       	rjmp	.+0      	; 0x898 <main+0x350>
+ 898:	00 00       	nop
+			{
+				_delay_ms(100);
+				q=1;
+ 89a:	b0 92 17 01 	sts	0x0117, r11
+			}
+	}
+	if ((i&(1<<1))==0)//eeprom	
+ 89e:	80 91 18 01 	lds	r24, 0x0118
+ 8a2:	81 fd       	sbrc	r24, 1
+ 8a4:	0e c0       	rjmp	.+28     	; 0x8c2 <main+0x37a>
+ 8a6:	8f ef       	ldi	r24, 0xFF	; 255
+ 8a8:	93 ec       	ldi	r25, 0xC3	; 195
+ 8aa:	a9 e0       	ldi	r26, 0x09	; 9
+ 8ac:	81 50       	subi	r24, 0x01	; 1
+ 8ae:	90 40       	sbci	r25, 0x00	; 0
+ 8b0:	a0 40       	sbci	r26, 0x00	; 0
+ 8b2:	e1 f7       	brne	.-8      	; 0x8ac <main+0x364>
+ 8b4:	00 c0       	rjmp	.+0      	; 0x8b6 <main+0x36e>
+ 8b6:	00 00       	nop
+	{
+		_delay_ms(200);
+		eeprom_write_byte(&w ,q);
+ 8b8:	c8 01       	movw	r24, r16
+ 8ba:	60 91 17 01 	lds	r22, 0x0117
+ 8be:	0e 94 da 05 	call	0xbb4	; 0xbb4 <__eewr_byte_m128>
+	}
+	if ((i&(1<<3))==0)//eeprom	
+ 8c2:	80 91 18 01 	lds	r24, 0x0118
+ 8c6:	83 fd       	sbrc	r24, 3
+ 8c8:	1d c0       	rjmp	.+58     	; 0x904 <main+0x3bc>
+ 8ca:	8f ef       	ldi	r24, 0xFF	; 255
+ 8cc:	93 ec       	ldi	r25, 0xC3	; 195
+ 8ce:	a9 e0       	ldi	r26, 0x09	; 9
+ 8d0:	81 50       	subi	r24, 0x01	; 1
+ 8d2:	90 40       	sbci	r25, 0x00	; 0
+ 8d4:	a0 40       	sbci	r26, 0x00	; 0
+ 8d6:	e1 f7       	brne	.-8      	; 0x8d0 <main+0x388>
+ 8d8:	00 c0       	rjmp	.+0      	; 0x8da <main+0x392>
+ 8da:	00 00       	nop
+	{ 
+		_delay_ms(200);
+		q=eeprom_read_byte(&w);//читает
+ 8dc:	c8 01       	movw	r24, r16
+ 8de:	0e 94 d2 05 	call	0xba4	; 0xba4 <__eerd_byte_m128>
+ 8e2:	80 93 17 01 	sts	0x0117, r24
+		
+		PORTC=0b11000000; //Установка курсора по адресу
+ 8e6:	d5 ba       	out	0x15, r13	; 21
+		PORTC|=(1<<2);//E
+ 8e8:	aa 9a       	sbi	0x15, 2	; 21
+		PORTC&=~(1<<2);
+ 8ea:	aa 98       	cbi	0x15, 2	; 21
+		PORTC=0b01100000;//адрес 0х46 вторая строка
+ 8ec:	c5 ba       	out	0x15, r12	; 21
+		PORTC|=(1<<2);//E
+ 8ee:	aa 9a       	sbi	0x15, 2	; 21
+		PORTC&=~(1<<2);
+ 8f0:	aa 98       	cbi	0x15, 2	; 21
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 8f2:	af e8       	ldi	r26, 0x8F	; 143
+ 8f4:	b1 e0       	ldi	r27, 0x01	; 1
+ 8f6:	11 97       	sbiw	r26, 0x01	; 1
+ 8f8:	f1 f7       	brne	.-4      	; 0x8f6 <main+0x3ae>
+ 8fa:	00 c0       	rjmp	.+0      	; 0x8fc <main+0x3b4>
+ 8fc:	00 00       	nop
+		_delay_us(100);
+		LCD_data(q+0x30);	
+ 8fe:	80 5d       	subi	r24, 0xD0	; 208
+ 900:	0e 94 04 01 	call	0x208	; 0x208 <LCD_data>
+	}
+	
+	
+	if (q==1)     //Запуск мигания Часы
+ 904:	80 91 17 01 	lds	r24, 0x0117
+ 908:	81 30       	cpi	r24, 0x01	; 1
+ 90a:	11 f4       	brne	.+4      	; 0x910 <main+0x3c8>
+	{
+		MiganieH();
+ 90c:	0e 94 ea 01 	call	0x3d4	; 0x3d4 <MiganieH>
+	}
+	if (q==2)     //Запуск мигания Часы
+ 910:	80 91 17 01 	lds	r24, 0x0117
+ 914:	82 30       	cpi	r24, 0x02	; 2
+ 916:	09 f0       	breq	.+2      	; 0x91a <main+0x3d2>
+ 918:	b4 ce       	rjmp	.-664    	; 0x682 <main+0x13a>
+	{
+		MiganieM();
+ 91a:	0e 94 47 02 	call	0x48e	; 0x48e <MiganieM>
+ 91e:	b1 ce       	rjmp	.-670    	; 0x682 <main+0x13a>
+
+00000920 <__divsf3>:
+ 920:	0c d0       	rcall	.+24     	; 0x93a <__divsf3x>
+ 922:	e6 c0       	rjmp	.+460    	; 0xaf0 <__fp_round>
+ 924:	de d0       	rcall	.+444    	; 0xae2 <__fp_pscB>
+ 926:	40 f0       	brcs	.+16     	; 0x938 <__divsf3+0x18>
+ 928:	d5 d0       	rcall	.+426    	; 0xad4 <__fp_pscA>
+ 92a:	30 f0       	brcs	.+12     	; 0x938 <__divsf3+0x18>
+ 92c:	21 f4       	brne	.+8      	; 0x936 <__divsf3+0x16>
+ 92e:	5f 3f       	cpi	r21, 0xFF	; 255
+ 930:	19 f0       	breq	.+6      	; 0x938 <__divsf3+0x18>
+ 932:	c7 c0       	rjmp	.+398    	; 0xac2 <__fp_inf>
+ 934:	51 11       	cpse	r21, r1
+ 936:	10 c1       	rjmp	.+544    	; 0xb58 <__fp_szero>
+ 938:	ca c0       	rjmp	.+404    	; 0xace <__fp_nan>
+
+0000093a <__divsf3x>:
+ 93a:	eb d0       	rcall	.+470    	; 0xb12 <__fp_split3>
+ 93c:	98 f3       	brcs	.-26     	; 0x924 <__divsf3+0x4>
+
+0000093e <__divsf3_pse>:
+ 93e:	99 23       	and	r25, r25
+ 940:	c9 f3       	breq	.-14     	; 0x934 <__divsf3+0x14>
+ 942:	55 23       	and	r21, r21
+ 944:	b1 f3       	breq	.-20     	; 0x932 <__divsf3+0x12>
+ 946:	95 1b       	sub	r25, r21
+ 948:	55 0b       	sbc	r21, r21
+ 94a:	bb 27       	eor	r27, r27
+ 94c:	aa 27       	eor	r26, r26
+ 94e:	62 17       	cp	r22, r18
+ 950:	73 07       	cpc	r23, r19
+ 952:	84 07       	cpc	r24, r20
+ 954:	38 f0       	brcs	.+14     	; 0x964 <__divsf3_pse+0x26>
+ 956:	9f 5f       	subi	r25, 0xFF	; 255
+ 958:	5f 4f       	sbci	r21, 0xFF	; 255
+ 95a:	22 0f       	add	r18, r18
+ 95c:	33 1f       	adc	r19, r19
+ 95e:	44 1f       	adc	r20, r20
+ 960:	aa 1f       	adc	r26, r26
+ 962:	a9 f3       	breq	.-22     	; 0x94e <__divsf3_pse+0x10>
+ 964:	33 d0       	rcall	.+102    	; 0x9cc <__divsf3_pse+0x8e>
+ 966:	0e 2e       	mov	r0, r30
+ 968:	3a f0       	brmi	.+14     	; 0x978 <__divsf3_pse+0x3a>
+ 96a:	e0 e8       	ldi	r30, 0x80	; 128
+ 96c:	30 d0       	rcall	.+96     	; 0x9ce <__divsf3_pse+0x90>
+ 96e:	91 50       	subi	r25, 0x01	; 1
+ 970:	50 40       	sbci	r21, 0x00	; 0
+ 972:	e6 95       	lsr	r30
+ 974:	00 1c       	adc	r0, r0
+ 976:	ca f7       	brpl	.-14     	; 0x96a <__divsf3_pse+0x2c>
+ 978:	29 d0       	rcall	.+82     	; 0x9cc <__divsf3_pse+0x8e>
+ 97a:	fe 2f       	mov	r31, r30
+ 97c:	27 d0       	rcall	.+78     	; 0x9cc <__divsf3_pse+0x8e>
+ 97e:	66 0f       	add	r22, r22
+ 980:	77 1f       	adc	r23, r23
+ 982:	88 1f       	adc	r24, r24
+ 984:	bb 1f       	adc	r27, r27
+ 986:	26 17       	cp	r18, r22
+ 988:	37 07       	cpc	r19, r23
+ 98a:	48 07       	cpc	r20, r24
+ 98c:	ab 07       	cpc	r26, r27
+ 98e:	b0 e8       	ldi	r27, 0x80	; 128
+ 990:	09 f0       	breq	.+2      	; 0x994 <__divsf3_pse+0x56>
+ 992:	bb 0b       	sbc	r27, r27
+ 994:	80 2d       	mov	r24, r0
+ 996:	bf 01       	movw	r22, r30
+ 998:	ff 27       	eor	r31, r31
+ 99a:	93 58       	subi	r25, 0x83	; 131
+ 99c:	5f 4f       	sbci	r21, 0xFF	; 255
+ 99e:	2a f0       	brmi	.+10     	; 0x9aa <__divsf3_pse+0x6c>
+ 9a0:	9e 3f       	cpi	r25, 0xFE	; 254
+ 9a2:	51 05       	cpc	r21, r1
+ 9a4:	68 f0       	brcs	.+26     	; 0x9c0 <__divsf3_pse+0x82>
+ 9a6:	8d c0       	rjmp	.+282    	; 0xac2 <__fp_inf>
+ 9a8:	d7 c0       	rjmp	.+430    	; 0xb58 <__fp_szero>
+ 9aa:	5f 3f       	cpi	r21, 0xFF	; 255
+ 9ac:	ec f3       	brlt	.-6      	; 0x9a8 <__divsf3_pse+0x6a>
+ 9ae:	98 3e       	cpi	r25, 0xE8	; 232
+ 9b0:	dc f3       	brlt	.-10     	; 0x9a8 <__divsf3_pse+0x6a>
+ 9b2:	86 95       	lsr	r24
+ 9b4:	77 95       	ror	r23
+ 9b6:	67 95       	ror	r22
+ 9b8:	b7 95       	ror	r27
+ 9ba:	f7 95       	ror	r31
+ 9bc:	9f 5f       	subi	r25, 0xFF	; 255
+ 9be:	c9 f7       	brne	.-14     	; 0x9b2 <__divsf3_pse+0x74>
+ 9c0:	88 0f       	add	r24, r24
+ 9c2:	91 1d       	adc	r25, r1
+ 9c4:	96 95       	lsr	r25
+ 9c6:	87 95       	ror	r24
+ 9c8:	97 f9       	bld	r25, 7
+ 9ca:	08 95       	ret
+ 9cc:	e1 e0       	ldi	r30, 0x01	; 1
+ 9ce:	66 0f       	add	r22, r22
+ 9d0:	77 1f       	adc	r23, r23
+ 9d2:	88 1f       	adc	r24, r24
+ 9d4:	bb 1f       	adc	r27, r27
+ 9d6:	62 17       	cp	r22, r18
+ 9d8:	73 07       	cpc	r23, r19
+ 9da:	84 07       	cpc	r24, r20
+ 9dc:	ba 07       	cpc	r27, r26
+ 9de:	20 f0       	brcs	.+8      	; 0x9e8 <__divsf3_pse+0xaa>
+ 9e0:	62 1b       	sub	r22, r18
+ 9e2:	73 0b       	sbc	r23, r19
+ 9e4:	84 0b       	sbc	r24, r20
+ 9e6:	ba 0b       	sbc	r27, r26
+ 9e8:	ee 1f       	adc	r30, r30
+ 9ea:	88 f7       	brcc	.-30     	; 0x9ce <__divsf3_pse+0x90>
+ 9ec:	e0 95       	com	r30
+ 9ee:	08 95       	ret
+
+000009f0 <__fixunssfsi>:
+ 9f0:	98 d0       	rcall	.+304    	; 0xb22 <__fp_splitA>
+ 9f2:	88 f0       	brcs	.+34     	; 0xa16 <__fixunssfsi+0x26>
+ 9f4:	9f 57       	subi	r25, 0x7F	; 127
+ 9f6:	90 f0       	brcs	.+36     	; 0xa1c <__fixunssfsi+0x2c>
+ 9f8:	b9 2f       	mov	r27, r25
+ 9fa:	99 27       	eor	r25, r25
+ 9fc:	b7 51       	subi	r27, 0x17	; 23
+ 9fe:	a0 f0       	brcs	.+40     	; 0xa28 <__fixunssfsi+0x38>
+ a00:	d1 f0       	breq	.+52     	; 0xa36 <__fixunssfsi+0x46>
+ a02:	66 0f       	add	r22, r22
+ a04:	77 1f       	adc	r23, r23
+ a06:	88 1f       	adc	r24, r24
+ a08:	99 1f       	adc	r25, r25
+ a0a:	1a f0       	brmi	.+6      	; 0xa12 <__fixunssfsi+0x22>
+ a0c:	ba 95       	dec	r27
+ a0e:	c9 f7       	brne	.-14     	; 0xa02 <__fixunssfsi+0x12>
+ a10:	12 c0       	rjmp	.+36     	; 0xa36 <__fixunssfsi+0x46>
+ a12:	b1 30       	cpi	r27, 0x01	; 1
+ a14:	81 f0       	breq	.+32     	; 0xa36 <__fixunssfsi+0x46>
+ a16:	9f d0       	rcall	.+318    	; 0xb56 <__fp_zero>
+ a18:	b1 e0       	ldi	r27, 0x01	; 1
+ a1a:	08 95       	ret
+ a1c:	9c c0       	rjmp	.+312    	; 0xb56 <__fp_zero>
+ a1e:	67 2f       	mov	r22, r23
+ a20:	78 2f       	mov	r23, r24
+ a22:	88 27       	eor	r24, r24
+ a24:	b8 5f       	subi	r27, 0xF8	; 248
+ a26:	39 f0       	breq	.+14     	; 0xa36 <__fixunssfsi+0x46>
+ a28:	b9 3f       	cpi	r27, 0xF9	; 249
+ a2a:	cc f3       	brlt	.-14     	; 0xa1e <__fixunssfsi+0x2e>
+ a2c:	86 95       	lsr	r24
+ a2e:	77 95       	ror	r23
+ a30:	67 95       	ror	r22
+ a32:	b3 95       	inc	r27
+ a34:	d9 f7       	brne	.-10     	; 0xa2c <__fixunssfsi+0x3c>
+ a36:	3e f4       	brtc	.+14     	; 0xa46 <__fixunssfsi+0x56>
+ a38:	90 95       	com	r25
+ a3a:	80 95       	com	r24
+ a3c:	70 95       	com	r23
+ a3e:	61 95       	neg	r22
+ a40:	7f 4f       	sbci	r23, 0xFF	; 255
+ a42:	8f 4f       	sbci	r24, 0xFF	; 255
+ a44:	9f 4f       	sbci	r25, 0xFF	; 255
+ a46:	08 95       	ret
+
+00000a48 <__floatunsisf>:
+ a48:	e8 94       	clt
+ a4a:	09 c0       	rjmp	.+18     	; 0xa5e <__floatsisf+0x12>
+
+00000a4c <__floatsisf>:
+ a4c:	97 fb       	bst	r25, 7
+ a4e:	3e f4       	brtc	.+14     	; 0xa5e <__floatsisf+0x12>
+ a50:	90 95       	com	r25
+ a52:	80 95       	com	r24
+ a54:	70 95       	com	r23
+ a56:	61 95       	neg	r22
+ a58:	7f 4f       	sbci	r23, 0xFF	; 255
+ a5a:	8f 4f       	sbci	r24, 0xFF	; 255
+ a5c:	9f 4f       	sbci	r25, 0xFF	; 255
+ a5e:	99 23       	and	r25, r25
+ a60:	a9 f0       	breq	.+42     	; 0xa8c <__floatsisf+0x40>
+ a62:	f9 2f       	mov	r31, r25
+ a64:	96 e9       	ldi	r25, 0x96	; 150
+ a66:	bb 27       	eor	r27, r27
+ a68:	93 95       	inc	r25
+ a6a:	f6 95       	lsr	r31
+ a6c:	87 95       	ror	r24
+ a6e:	77 95       	ror	r23
+ a70:	67 95       	ror	r22
+ a72:	b7 95       	ror	r27
+ a74:	f1 11       	cpse	r31, r1
+ a76:	f8 cf       	rjmp	.-16     	; 0xa68 <__floatsisf+0x1c>
+ a78:	fa f4       	brpl	.+62     	; 0xab8 <__floatsisf+0x6c>
+ a7a:	bb 0f       	add	r27, r27
+ a7c:	11 f4       	brne	.+4      	; 0xa82 <__floatsisf+0x36>
+ a7e:	60 ff       	sbrs	r22, 0
+ a80:	1b c0       	rjmp	.+54     	; 0xab8 <__floatsisf+0x6c>
+ a82:	6f 5f       	subi	r22, 0xFF	; 255
+ a84:	7f 4f       	sbci	r23, 0xFF	; 255
+ a86:	8f 4f       	sbci	r24, 0xFF	; 255
+ a88:	9f 4f       	sbci	r25, 0xFF	; 255
+ a8a:	16 c0       	rjmp	.+44     	; 0xab8 <__floatsisf+0x6c>
+ a8c:	88 23       	and	r24, r24
+ a8e:	11 f0       	breq	.+4      	; 0xa94 <__floatsisf+0x48>
+ a90:	96 e9       	ldi	r25, 0x96	; 150
+ a92:	11 c0       	rjmp	.+34     	; 0xab6 <__floatsisf+0x6a>
+ a94:	77 23       	and	r23, r23
+ a96:	21 f0       	breq	.+8      	; 0xaa0 <__floatsisf+0x54>
+ a98:	9e e8       	ldi	r25, 0x8E	; 142
+ a9a:	87 2f       	mov	r24, r23
+ a9c:	76 2f       	mov	r23, r22
+ a9e:	05 c0       	rjmp	.+10     	; 0xaaa <__floatsisf+0x5e>
+ aa0:	66 23       	and	r22, r22
+ aa2:	71 f0       	breq	.+28     	; 0xac0 <__floatsisf+0x74>
+ aa4:	96 e8       	ldi	r25, 0x86	; 134
+ aa6:	86 2f       	mov	r24, r22
+ aa8:	70 e0       	ldi	r23, 0x00	; 0
+ aaa:	60 e0       	ldi	r22, 0x00	; 0
+ aac:	2a f0       	brmi	.+10     	; 0xab8 <__floatsisf+0x6c>
+ aae:	9a 95       	dec	r25
+ ab0:	66 0f       	add	r22, r22
+ ab2:	77 1f       	adc	r23, r23
+ ab4:	88 1f       	adc	r24, r24
+ ab6:	da f7       	brpl	.-10     	; 0xaae <__floatsisf+0x62>
+ ab8:	88 0f       	add	r24, r24
+ aba:	96 95       	lsr	r25
+ abc:	87 95       	ror	r24
+ abe:	97 f9       	bld	r25, 7
+ ac0:	08 95       	ret
+
+00000ac2 <__fp_inf>:
+ ac2:	97 f9       	bld	r25, 7
+ ac4:	9f 67       	ori	r25, 0x7F	; 127
+ ac6:	80 e8       	ldi	r24, 0x80	; 128
+ ac8:	70 e0       	ldi	r23, 0x00	; 0
+ aca:	60 e0       	ldi	r22, 0x00	; 0
+ acc:	08 95       	ret
+
+00000ace <__fp_nan>:
+ ace:	9f ef       	ldi	r25, 0xFF	; 255
+ ad0:	80 ec       	ldi	r24, 0xC0	; 192
+ ad2:	08 95       	ret
+
+00000ad4 <__fp_pscA>:
+ ad4:	00 24       	eor	r0, r0
+ ad6:	0a 94       	dec	r0
+ ad8:	16 16       	cp	r1, r22
+ ada:	17 06       	cpc	r1, r23
+ adc:	18 06       	cpc	r1, r24
+ ade:	09 06       	cpc	r0, r25
+ ae0:	08 95       	ret
+
+00000ae2 <__fp_pscB>:
+ ae2:	00 24       	eor	r0, r0
+ ae4:	0a 94       	dec	r0
+ ae6:	12 16       	cp	r1, r18
+ ae8:	13 06       	cpc	r1, r19
+ aea:	14 06       	cpc	r1, r20
+ aec:	05 06       	cpc	r0, r21
+ aee:	08 95       	ret
+
+00000af0 <__fp_round>:
+ af0:	09 2e       	mov	r0, r25
+ af2:	03 94       	inc	r0
+ af4:	00 0c       	add	r0, r0
+ af6:	11 f4       	brne	.+4      	; 0xafc <__fp_round+0xc>
+ af8:	88 23       	and	r24, r24
+ afa:	52 f0       	brmi	.+20     	; 0xb10 <__fp_round+0x20>
+ afc:	bb 0f       	add	r27, r27
+ afe:	40 f4       	brcc	.+16     	; 0xb10 <__fp_round+0x20>
+ b00:	bf 2b       	or	r27, r31
+ b02:	11 f4       	brne	.+4      	; 0xb08 <__fp_round+0x18>
+ b04:	60 ff       	sbrs	r22, 0
+ b06:	04 c0       	rjmp	.+8      	; 0xb10 <__fp_round+0x20>
+ b08:	6f 5f       	subi	r22, 0xFF	; 255
+ b0a:	7f 4f       	sbci	r23, 0xFF	; 255
+ b0c:	8f 4f       	sbci	r24, 0xFF	; 255
+ b0e:	9f 4f       	sbci	r25, 0xFF	; 255
+ b10:	08 95       	ret
+
+00000b12 <__fp_split3>:
+ b12:	57 fd       	sbrc	r21, 7
+ b14:	90 58       	subi	r25, 0x80	; 128
+ b16:	44 0f       	add	r20, r20
+ b18:	55 1f       	adc	r21, r21
+ b1a:	59 f0       	breq	.+22     	; 0xb32 <__fp_splitA+0x10>
+ b1c:	5f 3f       	cpi	r21, 0xFF	; 255
+ b1e:	71 f0       	breq	.+28     	; 0xb3c <__fp_splitA+0x1a>
+ b20:	47 95       	ror	r20
+
+00000b22 <__fp_splitA>:
+ b22:	88 0f       	add	r24, r24
+ b24:	97 fb       	bst	r25, 7
+ b26:	99 1f       	adc	r25, r25
+ b28:	61 f0       	breq	.+24     	; 0xb42 <__fp_splitA+0x20>
+ b2a:	9f 3f       	cpi	r25, 0xFF	; 255
+ b2c:	79 f0       	breq	.+30     	; 0xb4c <__fp_splitA+0x2a>
+ b2e:	87 95       	ror	r24
+ b30:	08 95       	ret
+ b32:	12 16       	cp	r1, r18
+ b34:	13 06       	cpc	r1, r19
+ b36:	14 06       	cpc	r1, r20
+ b38:	55 1f       	adc	r21, r21
+ b3a:	f2 cf       	rjmp	.-28     	; 0xb20 <__fp_split3+0xe>
+ b3c:	46 95       	lsr	r20
+ b3e:	f1 df       	rcall	.-30     	; 0xb22 <__fp_splitA>
+ b40:	08 c0       	rjmp	.+16     	; 0xb52 <__fp_splitA+0x30>
+ b42:	16 16       	cp	r1, r22
+ b44:	17 06       	cpc	r1, r23
+ b46:	18 06       	cpc	r1, r24
+ b48:	99 1f       	adc	r25, r25
+ b4a:	f1 cf       	rjmp	.-30     	; 0xb2e <__fp_splitA+0xc>
+ b4c:	86 95       	lsr	r24
+ b4e:	71 05       	cpc	r23, r1
+ b50:	61 05       	cpc	r22, r1
+ b52:	08 94       	sec
+ b54:	08 95       	ret
+
+00000b56 <__fp_zero>:
+ b56:	e8 94       	clt
+
+00000b58 <__fp_szero>:
+ b58:	bb 27       	eor	r27, r27
+ b5a:	66 27       	eor	r22, r22
+ b5c:	77 27       	eor	r23, r23
+ b5e:	cb 01       	movw	r24, r22
+ b60:	97 f9       	bld	r25, 7
+ b62:	08 95       	ret
+
+00000b64 <__udivmodqi4>:
+ b64:	99 1b       	sub	r25, r25
+ b66:	79 e0       	ldi	r23, 0x09	; 9
+ b68:	04 c0       	rjmp	.+8      	; 0xb72 <__udivmodqi4_ep>
+
+00000b6a <__udivmodqi4_loop>:
+ b6a:	99 1f       	adc	r25, r25
+ b6c:	96 17       	cp	r25, r22
+ b6e:	08 f0       	brcs	.+2      	; 0xb72 <__udivmodqi4_ep>
+ b70:	96 1b       	sub	r25, r22
+
+00000b72 <__udivmodqi4_ep>:
+ b72:	88 1f       	adc	r24, r24
+ b74:	7a 95       	dec	r23
+ b76:	c9 f7       	brne	.-14     	; 0xb6a <__udivmodqi4_loop>
+ b78:	80 95       	com	r24
+ b7a:	08 95       	ret
+
+00000b7c <__udivmodhi4>:
+ b7c:	aa 1b       	sub	r26, r26
+ b7e:	bb 1b       	sub	r27, r27
+ b80:	51 e1       	ldi	r21, 0x11	; 17
+ b82:	07 c0       	rjmp	.+14     	; 0xb92 <__udivmodhi4_ep>
+
+00000b84 <__udivmodhi4_loop>:
+ b84:	aa 1f       	adc	r26, r26
+ b86:	bb 1f       	adc	r27, r27
+ b88:	a6 17       	cp	r26, r22
+ b8a:	b7 07       	cpc	r27, r23
+ b8c:	10 f0       	brcs	.+4      	; 0xb92 <__udivmodhi4_ep>
+ b8e:	a6 1b       	sub	r26, r22
+ b90:	b7 0b       	sbc	r27, r23
+
+00000b92 <__udivmodhi4_ep>:
+ b92:	88 1f       	adc	r24, r24
+ b94:	99 1f       	adc	r25, r25
+ b96:	5a 95       	dec	r21
+ b98:	a9 f7       	brne	.-22     	; 0xb84 <__udivmodhi4_loop>
+ b9a:	80 95       	com	r24
+ b9c:	90 95       	com	r25
+ b9e:	bc 01       	movw	r22, r24
+ ba0:	cd 01       	movw	r24, r26
+ ba2:	08 95       	ret
+
+00000ba4 <__eerd_byte_m128>:
+ ba4:	e1 99       	sbic	0x1c, 1	; 28
+ ba6:	fe cf       	rjmp	.-4      	; 0xba4 <__eerd_byte_m128>
+ ba8:	9f bb       	out	0x1f, r25	; 31
+ baa:	8e bb       	out	0x1e, r24	; 30
+ bac:	e0 9a       	sbi	0x1c, 0	; 28
+ bae:	99 27       	eor	r25, r25
+ bb0:	8d b3       	in	r24, 0x1d	; 29
+ bb2:	08 95       	ret
+
+00000bb4 <__eewr_byte_m128>:
+ bb4:	26 2f       	mov	r18, r22
+
+00000bb6 <__eewr_r18_m128>:
+ bb6:	e1 99       	sbic	0x1c, 1	; 28
+ bb8:	fe cf       	rjmp	.-4      	; 0xbb6 <__eewr_r18_m128>
+ bba:	9f bb       	out	0x1f, r25	; 31
+ bbc:	8e bb       	out	0x1e, r24	; 30
+ bbe:	2d bb       	out	0x1d, r18	; 29
+ bc0:	0f b6       	in	r0, 0x3f	; 63
+ bc2:	f8 94       	cli
+ bc4:	e2 9a       	sbi	0x1c, 2	; 28
+ bc6:	e1 9a       	sbi	0x1c, 1	; 28
+ bc8:	0f be       	out	0x3f, r0	; 63
+ bca:	01 96       	adiw	r24, 0x01	; 1
+ bcc:	08 95       	ret
+
+00000bce <_exit>:
+ bce:	f8 94       	cli
+
+00000bd0 <__stop_program>:
+ bd0:	ff cf       	rjmp	.-2      	; 0xbd0 <__stop_program>
